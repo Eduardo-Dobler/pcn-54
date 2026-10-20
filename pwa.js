@@ -41,7 +41,7 @@
       return;
     }
     hint.textContent = location.protocol === 'file:'
-      ? 'Para instalar, abra o endereço publicado do PNC com conexão à internet. O arquivo local permite apenas visualizar o site.'
+      ? 'Para instalar, abra o endereço publicado do PCN com conexão à internet. O arquivo local permite apenas visualizar o site.'
       : 'No Android, abra o menu do navegador e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari, toque em Compartilhar e em Adicionar à Tela de Início. Se aparecer, ative Abrir como App da Web.';
     dialog.showModal();
   });

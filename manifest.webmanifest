@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Partido Novo Caminho — PNC 54",
-  "short_name": "PNC 54",
-  "description": "Propostas, integrantes e notícias do Partido Novo Caminho. Projeto interdisciplinar SENAC.",
+  "name": "Partido Caminho Novo — PCN 54",
+  "short_name": "PCN 54",
+  "description": "Propostas, integrantes e notícias do Partido Caminho Novo. Projeto interdisciplinar SENAC.",
   "lang": "pt-BR",
   "start_url": "./#inicio",
   "scope": "./",
@@ -16,7 +16,7 @@
   ],
   "shortcuts": [
     { "name": "Integrantes", "url": "./#integrantes" },
-    { "name": "Propostas do PNC", "url": "./#sobre/programa" },
+    { "name": "Propostas do PCN", "url": "./#sobre/programa" },
     { "name": "Notícias", "url": "./#noticias" }
   ]
 }

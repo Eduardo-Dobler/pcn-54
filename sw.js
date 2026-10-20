@@ -1,6 +1,7 @@
 /* Gerado por scripts/build-offline.py. Não editar sw.js manualmente. */
-const CACHE_PREFIX = 'pnc54-app-';
-const CACHE_NAME = CACHE_PREFIX + '979599f30e4cf009';
+const CACHE_PREFIX = 'pcn54-app-';
+const LEGACY_CACHE_PREFIX = 'pnc54-app-'; // Migração do app já instalado.
+const CACHE_NAME = CACHE_PREFIX + '7cc2dab92f2fb21d';
 const FILES = [
   "index.html",
   "styles.css",
@@ -19,7 +20,7 @@ const FILES = [
   "assets/educacao.jpg",
   "assets/favicon-cavalo.png",
   "assets/fonts.css",
-  "assets/logo-pnc-cavalo.png",
+  "assets/logo-pcn-cavalo.png",
   "assets/manrope-0.ttf",
   "assets/manrope-1.ttf",
   "assets/manrope-2.ttf",
@@ -27,7 +28,7 @@ const FILES = [
   "assets/manrope-4.ttf",
   "assets/people/candidato-small.webp",
   "assets/people/candidato.webp",
-  "assets/people/equipe-cavalo.webp",
+  "assets/people/equipe-pcn.webp",
   "assets/people/integrante-01-small.webp",
   "assets/people/integrante-01.webp",
   "assets/people/integrante-02-small.webp",
@@ -48,7 +49,7 @@ const FILES = [
   "assets/people/integrante-09.webp",
   "assets/people/integrante-10-small.webp",
   "assets/people/integrante-10.webp",
-  "assets/propostas-pnc.docx"
+  "assets/propostas-pcn.docx"
 ];
 const BASE = self.registration.scope;
 const SHELL = new URL('index.html', BASE).href;
@@ -62,7 +63,7 @@ self.addEventListener('install', event => {
       const response = await fetch(new Request(SHELL, { cache: 'reload' }));
       if (!response.ok || response.redirected || response.type !== 'basic' ||
           !response.headers.get('content-type')?.includes('text/html') ||
-          !(await response.clone().text()).includes('name="application-name" content="PNC 54"')) {
+          !(await response.clone().text()).includes('name="application-name" content="PCN 54"')) {
         throw new Error('App indisponível para cache');
       }
       await cache.put(SHELL, response);
@@ -81,7 +82,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     for (const name of await caches.keys()) {
-      if (name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME) await caches.delete(name);
+      if ((name.startsWith(CACHE_PREFIX) || name.startsWith(LEGACY_CACHE_PREFIX)) && name !== CACHE_NAME) await caches.delete(name);
     }
     await self.clients.claim();
   })());

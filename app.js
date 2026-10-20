@@ -1,7 +1,7 @@
 /* Navegação, carrossel, publicações e formulário. JavaScript puro, sem bibliotecas. */
 (() => {
   'use strict';
-  const data = window.PNC_DATA;
+  const data = window.PCN_DATA;
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
   const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -9,7 +9,7 @@
   const titleHTML = value => escapeHTML(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>').replace(/&lt;(\/?)em&gt;/gi, '<$1em>');
   const textTitle = value => String(value).replace(/<br\s*\/?\s*>/gi, ' ').replace(/<\/?em>/gi, '');
   const normalized = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const safeAsset = value => /^assets\/[a-zA-Z0-9_./-]+$/.test(value) && !value.includes('..') ? value : 'assets/logo-pnc-cavalo.png';
+  const safeAsset = value => /^assets\/[a-zA-Z0-9_./-]+$/.test(value) && !value.includes('..') ? value : 'assets/logo-pcn-cavalo.png';
   const safePercent = value => /^\d+(\.\d+)?%$/.test(value) ? value : '50%';
   const iconPaths = {
     home: '<path d="m3 10 9-7 9 7v10H3Z"></path><path d="M9 20v-7h6v7"></path>',
@@ -32,7 +32,7 @@
     <div class="hero-copy"><p class="eyebrow"><span class="hero-pill" aria-hidden="true"></span>${escapeHTML(slide.tag)}</p>
       <h1>${titleHTML(slide.titulo)}</h1><p>${escapeHTML(slide.texto)}</p>
       <div class="hero-actions"><a class="button button-gold" href="${escapeHTML(slide.destino)}">${escapeHTML(slide.botao)}<span aria-hidden="true">↗</span></a><a class="text-link" href="#sobre">Nossa visão <span aria-hidden="true">→</span></a></div>
-    </div><div class="hero-art"><span class="art-coordinate" aria-hidden="true">PNC / NOVO CAMINHO</span><div class="hero-rings" aria-hidden="true"></div>
+    </div><div class="hero-art"><span class="art-coordinate" aria-hidden="true">PCN / CAMINHO NOVO</span><div class="hero-rings" aria-hidden="true"></div>
       <div class="hero-photo hero-photo--${slide.formato === 'team' ? 'team' : 'portrait'}"><img src="${safeAsset(slide.imagem)}" alt="${escapeHTML(slide.alt)}" width="1080" height="1440" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} style="object-position:${safePercent(slide.x)} ${safePercent(slide.y)}"><span class="photo-number" aria-hidden="true">54</span></div>
       <div class="art-label glass"><p class="eyebrow">${escapeHTML(slide.detalhe)}</p><p>${titleHTML(slide.legenda)}</p></div>
     </div></article>`).join('');
@@ -46,7 +46,7 @@
 
   const avatar = (p, label, full = false) => `<div class="member-avatar"><img src="${safeAsset(full ? p.avatar : p.miniatura || p.avatar)}" alt="${escapeHTML(label)}" width="480" height="680" loading="lazy" style="object-position:${safePercent(p.x)} ${safePercent(p.y)}"></div>`;
   const candidate = data.candidato;
-  $('#candidato').innerHTML = `${avatar(candidate, 'Retrato do candidato do PNC', true)}<div class="candidate-copy"><p class="eyebrow">CANDIDATURA · PNC 54</p><h2 id="candidate-title">${escapeHTML(candidate.nome)}</h2><p class="candidate-lead">Pessoas em primeiro lugar.<br>Desenvolvimento com propósito.</p><p>${escapeHTML(candidate.bio)}</p><a class="button button-gold" href="#sobre/programa">Conheça as propostas <span aria-hidden="true">↗</span></a></div><span class="candidate-number" aria-hidden="true">54</span>`;
+  $('#candidato').innerHTML = `${avatar(candidate, 'Retrato do candidato do PCN', true)}<div class="candidate-copy"><p class="eyebrow">CANDIDATURA · PCN 54</p><h2 id="candidate-title">${escapeHTML(candidate.nome)}</h2><p class="candidate-lead">Pessoas em primeiro lugar.<br>Desenvolvimento com propósito.</p><p>${escapeHTML(candidate.bio)}</p><a class="button button-gold" href="#sobre/programa">Conheça as propostas <span aria-hidden="true">↗</span></a></div><span class="candidate-number" aria-hidden="true">54</span>`;
   $('#member-grid').innerHTML = data.integrantes.map((p, i) => `<article class="member-card glass"><span aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${avatar(p, `Retrato de ${p.nome}`)}<div class="member-copy"><p class="member-area">${escapeHTML(p.area)}</p><h2>${escapeHTML(p.nome)}</h2><p>${escapeHTML(p.cargo)}</p><p class="member-statement">${escapeHTML(p.resumo)}</p><button type="button" data-member="${i}" aria-label="Conhecer o perfil de ${escapeHTML(p.nome)}">Conhecer integrante <span aria-hidden="true">↗</span></button></div></article>`).join('');
 
   // Publicações e busca por categoria, título, resumo e conteúdo.
@@ -204,11 +204,11 @@
     const articleButton = e.target.closest('[data-article]');
     if (articleButton) {
       const n = data.noticias.find(x => x.id === articleButton.dataset.article);
-      if (n) openDialog(`<p class="eyebrow">${escapeHTML(n.categoria)} · PUBLICAÇÃO DEMONSTRATIVA</p><h2>${escapeHTML(n.titulo)}</h2><img class="article-image" src="${safeAsset(n.imagem)}" alt="${escapeHTML(n.alt)}">${n.paragrafos.map(p => `<p>${escapeHTML(p)}</p>`).join('')}${n.proposta ? `<a class="button button-gold" href="#sobre/${escapeHTML(n.proposta)}">Conhecer a proposta ↗</a>` : '<a class="button button-gold" href="#sobre">Conhecer o PNC ↗</a>'}`, articleButton);
+      if (n) openDialog(`<p class="eyebrow">${escapeHTML(n.categoria)} · PUBLICAÇÃO DEMONSTRATIVA</p><h2>${escapeHTML(n.titulo)}</h2><img class="article-image" src="${safeAsset(n.imagem)}" alt="${escapeHTML(n.alt)}">${n.paragrafos.map(p => `<p>${escapeHTML(p)}</p>`).join('')}${n.proposta ? `<a class="button button-gold" href="#sobre/${escapeHTML(n.proposta)}">Conhecer a proposta ↗</a>` : '<a class="button button-gold" href="#sobre">Conhecer o PCN ↗</a>'}`, articleButton);
     }
     if (e.target.closest('#detail-dialog a[href^="#"]')) closeDialog();
   });
-  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. As publicações demonstrativas apresentam as propostas do projeto.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Retratos do candidato, integrantes e fotografia da equipe: imagens fornecidas para o projeto.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PNC.</li></ul>', e.currentTarget));
+  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. As publicações demonstrativas apresentam as propostas do projeto.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Retratos do candidato, integrantes e fotografia da equipe: imagens fornecidas para o projeto.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PCN.</li></ul>', e.currentTarget));
 
   // As abas possuem URLs próprias por hash e funcionam sem servidor.
   const pageTitles = { inicio: 'Início', integrantes: 'Integrantes', sobre: 'Sobre o partido', noticias: 'Notícias', contatos: 'Contatos' };
@@ -220,7 +220,7 @@
     currentPage = selected;
     $$('.page').forEach(page => { page.hidden = page.dataset.page !== selected; });
     $$('[data-route]').forEach(link => { if (link.dataset.route === selected) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current'); });
-    document.title = `${pageTitles[selected]} · PNC 54 — Partido Novo Caminho`;
+    document.title = `${pageTitles[selected]} · PCN 54 — Partido Caminho Novo`;
     closeMenu(); closeDialog(); syncCarousel(); revealContent();
     requestAnimationFrame(() => {
       let target = null;
@@ -261,11 +261,11 @@
     const form = e.currentTarget;
     if (!form.reportValidity()) return;
     const values = new FormData(form);
-    preparedMessage = `MENSAGEM PARA O PARTIDO NOVO CAMINHO — PNC 54\n\nNome: ${values.get('nome').trim()}\nE-mail: ${values.get('email').trim()}\nBairro/cidade: ${values.get('bairro').trim() || 'Não informado'}\nAssunto: ${values.get('assunto')}\n\n${values.get('mensagem').trim()}`;
+    preparedMessage = `MENSAGEM PARA O PARTIDO CAMINHO NOVO — PCN 54\n\nNome: ${values.get('nome').trim()}\nE-mail: ${values.get('email').trim()}\nBairro/cidade: ${values.get('bairro').trim() || 'Não informado'}\nAssunto: ${values.get('assunto')}\n\n${values.get('mensagem').trim()}`;
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     downloadURL = URL.createObjectURL(new Blob([preparedMessage], { type: 'text/plain;charset=utf-8' }));
-    const mailURL = email ? `mailto:${email}?subject=${encodeURIComponent(`PNC — ${values.get('assunto')}`)}&body=${encodeURIComponent(preparedMessage)}` : '';
-    $('#contact-result').innerHTML = `<strong>Mensagem preparada para revisão.</strong><p>${email ? 'Revise o texto e abra seu aplicativo de e-mail para enviar.' : 'Modo demonstração: nenhuma mensagem foi enviada. Você pode baixar ou copiar o texto.'}</p><div class="message-preview"></div><div class="result-actions"><a class="button button-quiet" href="${downloadURL}" download="mensagem-para-pnc.txt">Baixar mensagem ↓</a><button class="button button-quiet" type="button" id="copy-message">Copiar texto</button>${mailURL ? `<a class="button button-gold" href="${escapeHTML(mailURL)}">Abrir no e-mail ↗</a>` : ''}</div>`;
+    const mailURL = email ? `mailto:${email}?subject=${encodeURIComponent(`PCN — ${values.get('assunto')}`)}&body=${encodeURIComponent(preparedMessage)}` : '';
+    $('#contact-result').innerHTML = `<strong>Mensagem preparada para revisão.</strong><p>${email ? 'Revise o texto e abra seu aplicativo de e-mail para enviar.' : 'Modo demonstração: nenhuma mensagem foi enviada. Você pode baixar ou copiar o texto.'}</p><div class="message-preview"></div><div class="result-actions"><a class="button button-quiet" href="${downloadURL}" download="mensagem-para-pcn.txt">Baixar mensagem ↓</a><button class="button button-quiet" type="button" id="copy-message">Copiar texto</button>${mailURL ? `<a class="button button-gold" href="${escapeHTML(mailURL)}">Abrir no e-mail ↗</a>` : ''}</div>`;
     $('#contact-result .message-preview').textContent = preparedMessage;
     $('#contact-result').hidden = false;
     $('#copy-message').addEventListener('click', async e => {

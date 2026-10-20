@@ -1,4 +1,4 @@
-# Partido Novo Caminho — PNC 54
+# Partido Caminho Novo — PCN 54
 
 Site em HTML, CSS e JavaScript puro para um projeto interdisciplinar do SENAC.
 
@@ -30,7 +30,7 @@ Os oito retratos da equipe seguem a ordem informada: Matheus Vanin (Presidente),
 
 Cada perfil tem uma frase de destaque no cartão e uma apresentação completa na janela de detalhes, redigidas a partir da função informada. Para editar, ajuste `nome`, `cargo`, `area`, `resumo` e `bio` na lista `integrantes` de `data.js`.
 
-A foto coletiva aparece no carrossel e na apresentação da equipe. A versão atual, `assets/people/equipe-cavalo.webp`, tem o emblema de cavalo na bandeira; a antiga `equipe.webp` foi removida. A edição foi feita com a ferramenta nativa de imagem, preservando a composição da fotografia. As instruções completas estão em `image-edits/equipe-cavalo.txt`. Os retratos com bebê e na praia foram retirados da seção Integrantes conforme solicitado. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
+A foto coletiva aparece no carrossel e na apresentação da equipe. A versão atual, `assets/people/equipe-pcn.webp`, traz a sigla PCN e o nome Partido Caminho Novo na bandeira, com o emblema de cavalo. A edição foi feita com a ferramenta nativa de imagem, preservando a composição da fotografia. As instruções completas estão em `image-edits/equipe-pcn.txt`. Os retratos com bebê e na praia foram retirados da seção Integrantes conforme solicitado. As imagens são versões WebP otimizadas; miniaturas menores são usadas nos cartões. Os arquivos originais enviados não foram alterados.
 
 Para trocar um retrato, ajuste `avatar` (imagem completa), `miniatura` (cartão), `x` e `y` (posição do enquadramento, em porcentagem). As fotos ficam em `assets/people/`.
 
@@ -60,7 +60,7 @@ O formulário valida os campos e prepara uma mensagem que pode ser revisada, cop
 
 ## Editar conteúdo
 
-- As cinco propostas foram adaptadas do Word fornecido. Cada proposta inclui ações, financiamento, acompanhamento e pergunta para o debate.
+- As cinco propostas foram adaptadas do Word fornecido. Cada proposta inclui ações, financiamento e acompanhamento.
 - A aba “Sobre” desenvolve a orientação informada: ir além da divisão esquerda/direita e unir bem-estar da população e desenvolvimento. Os princípios são uma redação inicial para revisão da equipe.
 - As publicações são textos demonstrativos sobre o programa. Nenhuma delas anuncia conquistas, eventos ou resultados reais.
 - Para criar novas notícias, adicione objetos na lista `noticias`; as categorias e a busca se atualizam automaticamente.
@@ -75,12 +75,12 @@ O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A 
 
 ## Fontes e créditos
 
-- Logo: emblema de cavalo dourado, roxo e branco fornecido pelo usuário, em `assets/logo-pnc-cavalo.png`. O ícone da aba em `assets/favicon-cavalo.png` é derivado dessa imagem.
+- Logo: emblema de cavalo dourado, roxo e branco fornecido pelo usuário, em `assets/logo-pcn-cavalo.png`. O ícone da aba em `assets/favicon-cavalo.png` é derivado dessa imagem.
 - Propostas: documento Word fornecido pelo usuário.
 - Retratos do candidato, integrantes e foto coletiva: 12 imagens fornecidas pela equipe do projeto.
 - Fotografias de ambientação: Unsplash, arquivos disponíveis em `assets`.
 - Fonte Manrope: Google Fonts. Licença SIL Open Font License incluída em `assets/OFL-Manrope.txt`.
-- Referência de organização: https://missao.org.br/ — navegação institucional e apresentação das ideias. A identidade visual e os textos deste site foram criados para o PNC.
+- Referência de organização: https://missao.org.br/ — navegação institucional e apresentação das ideias. A identidade visual e os textos deste site foram criados para o PCN.
 
 Este partido é fictício e o site se destina a fins educacionais.
 
@@ -88,7 +88,7 @@ Este partido é fictício e o site se destina a fins educacionais.
 
 O app mantém as mesmas cinco abas, o carrossel e o layout responsivo do site, com ícone do cavalo e abertura em janela própria. Não é um APK nem uma publicação em loja.
 
-- Android: abra o endereço HTTPS no Chrome e use **Instalar app PNC 54** no rodapé. Se a instalação automática não aparecer, procure **Instalar app** ou **Adicionar à tela inicial** no menu do navegador.
+- Android: abra o endereço HTTPS no Chrome e use **Instalar app PCN 54** no rodapé. Se a instalação automática não aparecer, procure **Instalar app** ou **Adicionar à tela inicial** no menu do navegador.
 - iPhone: abra o endereço no Safari, toque em **Compartilhar → Adicionar à Tela de Início**. Ative **Abrir como App da Web**, caso apareça.
 - Aguarde **Pronto para consultar sem internet** no rodapé antes de desconectar. A primeira preparação precisa de internet. O navegador pode remover dados offline para liberar espaço; nesse caso, abra online novamente.
 - O modo offline inclui páginas, fotos, fontes e o Word. Links externos continuam dependendo de internet. O formulário continua apenas preparando a mensagem.

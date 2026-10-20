@@ -1,5 +1,6 @@
 /* Gerado por scripts/build-offline.py. Não editar sw.js manualmente. */
-const CACHE_PREFIX = 'pnc54-app-';
+const CACHE_PREFIX = 'pcn54-app-';
+const LEGACY_CACHE_PREFIX = 'pnc54-app-'; // Migração do app já instalado.
 const CACHE_NAME = CACHE_PREFIX + '__VERSION__';
 const FILES = __FILES__;
 const BASE = self.registration.scope;
@@ -14,7 +15,7 @@ self.addEventListener('install', event => {
       const response = await fetch(new Request(SHELL, { cache: 'reload' }));
       if (!response.ok || response.redirected || response.type !== 'basic' ||
           !response.headers.get('content-type')?.includes('text/html') ||
-          !(await response.clone().text()).includes('name="application-name" content="PNC 54"')) {
+          !(await response.clone().text()).includes('name="application-name" content="PCN 54"')) {
         throw new Error('App indisponível para cache');
       }
       await cache.put(SHELL, response);
@@ -33,7 +34,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     for (const name of await caches.keys()) {
-      if (name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME) await caches.delete(name);
+      if ((name.startsWith(CACHE_PREFIX) || name.startsWith(LEGACY_CACHE_PREFIX)) && name !== CACHE_NAME) await caches.delete(name);
     }
     await self.clients.claim();
   })());

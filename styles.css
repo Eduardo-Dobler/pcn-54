@@ -23,7 +23,7 @@
 .member-avatar.individual-photo{background-size:cover}
 .hero-art{isolation:auto}
 
-/* Retratos e movimento — atualização da equipe PNC */
+/* Retratos e movimento — atualização da equipe PCN */
 :root{--ease-out:cubic-bezier(.22,1,.36,1)}
 .hero-slides{display:grid}
 .hero-slide{grid-area:1/1;opacity:0;visibility:hidden;pointer-events:none;animation:none;transition:opacity .65s ease,visibility .65s;min-width:0}

@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
-function worker(base = 'https://pnc.test/', login = false) {
+function worker(base = 'https://pcn.test/', login = false) {
   const handlers = {}, stores = new Map();
   let online = true, activated = false;
   const key = request => typeof request === 'string' ? request : request.url;
@@ -41,12 +41,12 @@ function worker(base = 'https://pnc.test/', login = false) {
   };
 }
 test('instala e abre todas as abas e recursos offline, inclusive em subdiretório', async () => {
-  for (const base of ['https://pnc.test/', 'https://pnc.test/projeto/']) {
+  for (const base of ['https://pcn.test/', 'https://pcn.test/projeto/']) {
     const w = worker(base);
     await w.event('install'); await w.event('activate'); w.offline();
     const html = await (await w.request(base)).text();
     for (const page of ['inicio', 'integrantes', 'sobre', 'noticias', 'contatos']) assert.ok(html.includes('data-page="' + page + '"'));
-    for (const file of ['data.js', 'app.js', 'pwa.js', 'assets/people/equipe-cavalo.webp', 'assets/propostas-pnc.docx']) {
+    for (const file of ['data.js', 'app.js', 'pwa.js', 'assets/people/equipe-pcn.webp', 'assets/propostas-pcn.docx']) {
       assert.ok(await w.request(base + file, 'cors'));
     }
     assert.ok(await w.request(base + 'index.html'));
@@ -57,16 +57,16 @@ test('instala e abre todas as abas e recursos offline, inclusive em subdiretóri
   }
 });
 test('não armazena login redirecionado nem deixa cache incompleto', async () => {
-  const w = worker('https://pnc.test/', true);
+  const w = worker('https://pcn.test/', true);
   await assert.rejects(w.event('install'), /indisponível/);
   assert.equal(w.stores.size, 0);
 });
-test('ativação limpa apenas versões do PNC e atualização exige mensagem explícita', async () => {
+test('ativação limpa apenas versões do PCN e atualização exige mensagem explícita', async () => {
   const w = worker();
-  await w.caches.open('pnc54-app-antigo'); await w.caches.open('outro-app');
+  await w.caches.open('pcn54-app-antigo'); await w.caches.open('pnc54-app-legado'); await w.caches.open('outro-app');
   await w.event('install'); assert.equal(w.activated, false);
   await w.event('activate');
-  assert.ok(w.stores.has('outro-app')); assert.ok(!w.stores.has('pnc54-app-antigo'));
+  assert.ok(w.stores.has('outro-app')); assert.ok(!w.stores.has('pcn54-app-antigo')); assert.ok(!w.stores.has('pnc54-app-legado'));
   let message;
   await w.event('message', { data: { type: 'CHECK_OFFLINE' }, source: { postMessage: value => { message = value; } } });
   assert.equal(message.type, 'OFFLINE_READY');

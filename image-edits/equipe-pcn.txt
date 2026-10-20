@@ -1,0 +1,5 @@
+Ferramenta: ImageGen nativa (modo de edição de imagem).
+Arquivo de saída: assets/people/equipe-pcn.webp
+
+Prompt aplicado:
+Use case: text-localization. Edit target: the supplied photo of eight people in black suits holding a black flag with a gold/purple/white horse emblem. Change ONLY the printed lettering on the flag. Replace the large white text "PNC" with exactly "PCN" (P then C then N), using the same bold white font, placement, perspective and size. Replace the small line "PARTIDO NOVO CAMINHO" underneath with exactly "PARTIDO CAMINHO NOVO". Keep every person, face, hand, pose, suit, pin, the horse emblem, flag folds, border ornaments, background, composition, lighting, colors and framing unchanged. No additional words, logos, subjects or alterations. The resulting flag must clearly read PCN and PARTIDO CAMINHO NOVO.

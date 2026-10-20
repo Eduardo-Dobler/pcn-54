@@ -1,19 +1,19 @@
 /* Edite este arquivo para trocar integrantes, textos, notícias e contatos.
    Sem fetch ou dependências: o site funciona abrindo index.html no computador. */
-window.PNC_DATA = {
-  partido: { nome: 'Partido Novo Caminho', sigla: 'PNC', numero: '54' },
+window.PCN_DATA = {
+  partido: { nome: 'Partido Caminho Novo', sigla: 'PCN', numero: '54' },
   contatos: { email: '', whatsapp: '', instagram: '' },
   carrossel: { intervalo: 6000 },
-  candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PNC · 54", "area": "Partido Novo Caminho", "bio": "À frente da candidatura do projeto interdisciplinar, representa a proposta de unir o bem-estar da população ao desenvolvimento da cidade. Nome e apresentação pessoal serão atualizados pela equipe.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
+  candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PCN · 54", "area": "Partido Caminho Novo", "bio": "À frente da candidatura do projeto interdisciplinar, representa a proposta de unir o bem-estar da população ao desenvolvimento da cidade. Nome e apresentação pessoal serão atualizados pela equipe.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
   slides: [
     {
-        "tag": "NOSSO CANDIDATO · PNC 54",
+        "tag": "NOSSO CANDIDATO · PCN 54",
         "titulo": "O futuro pede<br>um <em>novo caminho.</em>",
-        "texto": "Além dos rótulos, perto das pessoas. Nosso candidato representa o compromisso do PNC com qualidade de vida, oportunidades e desenvolvimento.",
+        "texto": "Além dos rótulos, perto das pessoas. Nosso candidato representa o compromisso do PCN com qualidade de vida, oportunidades e desenvolvimento.",
         "botao": "Conheça nosso candidato",
         "destino": "#integrantes/candidato",
         "imagem": "assets/people/candidato.webp",
-        "alt": "Retrato do candidato do PNC de terno, diante de bandeiras",
+        "alt": "Retrato do candidato do PCN de terno, diante de bandeiras",
         "formato": "portrait",
         "x": "50%",
         "y": "24%",
@@ -23,11 +23,11 @@ window.PNC_DATA = {
     {
         "tag": "DIFERENTES OLHARES · UM MESMO PROPÓSITO",
         "titulo": "Uma equipe.<br><em>Muitos caminhos.</em>",
-        "texto": "Pessoas que se unem para ouvir, debater e construir propostas. Conheça quem faz parte do Partido Novo Caminho.",
+        "texto": "Pessoas que se unem para ouvir, debater e construir propostas. Conheça quem faz parte do Partido Caminho Novo.",
         "botao": "Conheça a equipe",
         "destino": "#integrantes",
-        "imagem": "assets/people/equipe-cavalo.webp",
-        "alt": "Equipe do PNC reunida com a bandeira e o emblema de cavalo do partido",
+        "imagem": "assets/people/equipe-pcn.webp",
+        "alt": "Equipe do PCN reunida com a bandeira e o emblema de cavalo do partido",
         "formato": "team",
         "x": "50%",
         "y": "50%",
@@ -41,7 +41,7 @@ window.PNC_DATA = {
         "botao": "Explore nosso programa",
         "destino": "#sobre/programa",
         "imagem": "assets/people/integrante-01.webp",
-        "alt": "Integrante do projeto com traje formal e distintivo do PNC",
+        "alt": "Integrante do projeto com traje formal e distintivo do PCN",
         "formato": "portrait",
         "x": "50%",
         "y": "25%",
@@ -67,7 +67,7 @@ window.PNC_DATA = {
         "nome": "Matheus Vanin",
         "cargo": "Presidente",
         "area": "Presidência",
-        "bio": "Matheus Vanin assume a presidência com um compromisso claro: unir pessoas em torno de um projeto que coloque a população em primeiro lugar. Sua função é dar direção ao PNC, ouvir diferentes perspectivas e manter a equipe focada em propostas responsáveis. Liderar é construir confiança e incentivar cada integrante a contribuir para um futuro com mais oportunidades.",
+        "bio": "Matheus Vanin assume a presidência com um compromisso claro: unir pessoas em torno de um projeto que coloque a população em primeiro lugar. Sua função é dar direção ao PCN, ouvir diferentes perspectivas e manter a equipe focada em propostas responsáveis. Liderar é construir confiança e incentivar cada integrante a contribuir para um futuro com mais oportunidades.",
         "avatar": "assets/people/integrante-01.webp",
         "miniatura": "assets/people/integrante-01-small.webp",
         "x": "50%",
@@ -78,18 +78,18 @@ window.PNC_DATA = {
         "nome": "Eduardo Dobler",
         "cargo": "Vice-Presidente",
         "area": "Vice-Presidência",
-        "bio": "Eduardo Dobler fortalece a presidência e ajuda a transformar decisões em ações coordenadas. Na vice-presidência, seu compromisso é aproximar a equipe, acompanhar as prioridades e dar continuidade ao trabalho do partido. Com diálogo e disposição para colaborar, atua para que cada passo do PNC seja construído com união, responsabilidade e confiança no futuro.",
+        "bio": "Eduardo Dobler fortalece a presidência e ajuda a transformar decisões em ações coordenadas. Na vice-presidência, seu compromisso é aproximar a equipe, acompanhar as prioridades e dar continuidade ao trabalho do partido. Com diálogo e disposição para colaborar, atua para que cada passo do PCN seja construído com união, responsabilidade e confiança no futuro.",
         "avatar": "assets/people/integrante-04.webp",
         "miniatura": "assets/people/integrante-04-small.webp",
         "x": "50%",
         "y": "20%",
-        "resumo": "Diálogo e parceria para manter o PNC unido e levar seus compromissos adiante."
+        "resumo": "Diálogo e parceria para manter o PCN unido e levar seus compromissos adiante."
     },
     {
         "nome": "Ana Laura",
         "cargo": "Coordenadora de Campanha",
         "area": "Coordenação",
-        "bio": "Ana Laura coordena a campanha com o propósito de conectar pessoas, organizar ações e dar ritmo ao trabalho da equipe. Sua missão é alinhar os esforços do PNC para que as propostas cheguem à comunidade com clareza e propósito. Cada atividade é uma oportunidade de ouvir, mobilizar e mostrar que um novo caminho se constrói com participação e dedicação.",
+        "bio": "Ana Laura coordena a campanha com o propósito de conectar pessoas, organizar ações e dar ritmo ao trabalho da equipe. Sua missão é alinhar os esforços do PCN para que as propostas cheguem à comunidade com clareza e propósito. Cada atividade é uma oportunidade de ouvir, mobilizar e mostrar que um novo caminho se constrói com participação e dedicação.",
         "avatar": "assets/people/integrante-05.webp",
         "miniatura": "assets/people/integrante-05-small.webp",
         "x": "50%",
@@ -100,7 +100,7 @@ window.PNC_DATA = {
         "nome": "Theresa Venzon",
         "cargo": "Especialista Técnica",
         "area": "Análise técnica",
-        "bio": "Theresa Venzon tem a missão de dar consistência técnica às ideias do PNC. Seu trabalho é analisar possibilidades, avaliar desafios e ajudar a transformar objetivos em propostas que possam ser executadas e acompanhadas. Com atenção aos detalhes e compromisso com a qualidade, contribui para que a confiança no futuro venha acompanhada de planejamento e responsabilidade.",
+        "bio": "Theresa Venzon tem a missão de dar consistência técnica às ideias do PCN. Seu trabalho é analisar possibilidades, avaliar desafios e ajudar a transformar objetivos em propostas que possam ser executadas e acompanhadas. Com atenção aos detalhes e compromisso com a qualidade, contribui para que a confiança no futuro venha acompanhada de planejamento e responsabilidade.",
         "avatar": "assets/people/integrante-06.webp",
         "miniatura": "assets/people/integrante-06-small.webp",
         "x": "50%",
@@ -111,7 +111,7 @@ window.PNC_DATA = {
         "nome": "Vinicius Petry",
         "cargo": "Assessor",
         "area": "Assessoria",
-        "bio": "Vinicius Petry atua na assessoria com o compromisso de apoiar a equipe, organizar demandas e facilitar o andamento do projeto. Sua função conecta decisões e execução, ajudando cada integrante a trabalhar com mais clareza e alinhamento. É na dedicação ao cotidiano e no cuidado com cada etapa que o PNC ganha força para seguir em frente.",
+        "bio": "Vinicius Petry atua na assessoria com o compromisso de apoiar a equipe, organizar demandas e facilitar o andamento do projeto. Sua função conecta decisões e execução, ajudando cada integrante a trabalhar com mais clareza e alinhamento. É na dedicação ao cotidiano e no cuidado com cada etapa que o PCN ganha força para seguir em frente.",
         "avatar": "assets/people/integrante-07.webp",
         "miniatura": "assets/people/integrante-07-small.webp",
         "x": "50%",
@@ -122,7 +122,7 @@ window.PNC_DATA = {
         "nome": "Cristiano Luca",
         "cargo": "Pesquisador",
         "area": "Pesquisa",
-        "bio": "Cristiano Luca aprofunda o conhecimento que sustenta as propostas do PNC. Sua missão é reunir informações, comparar alternativas e compreender os problemas da comunidade para orientar escolhas mais conscientes. A pesquisa amplia nossa capacidade de agir: quanto melhor conhecemos a realidade, mais preparados estamos para construir soluções relevantes e responsáveis.",
+        "bio": "Cristiano Luca aprofunda o conhecimento que sustenta as propostas do PCN. Sua missão é reunir informações, comparar alternativas e compreender os problemas da comunidade para orientar escolhas mais conscientes. A pesquisa amplia nossa capacidade de agir: quanto melhor conhecemos a realidade, mais preparados estamos para construir soluções relevantes e responsáveis.",
         "avatar": "assets/people/integrante-08.webp",
         "miniatura": "assets/people/integrante-08-small.webp",
         "x": "50%",
@@ -133,7 +133,7 @@ window.PNC_DATA = {
         "nome": "Mateus Sjlender",
         "cargo": "Financiador",
         "area": "Recursos e planejamento",
-        "bio": "Mateus Sjlender apoia a estrutura do projeto e contribui para o planejamento dos recursos necessários ao trabalho da equipe. Como financiador, seu compromisso é ajudar a dar continuidade às ações do PNC, com organização e transparência. Apoiar um novo caminho é acreditar no potencial das pessoas e oferecer condições para que suas ideias avancem.",
+        "bio": "Mateus Sjlender apoia a estrutura do projeto e contribui para o planejamento dos recursos necessários ao trabalho da equipe. Como financiador, seu compromisso é ajudar a dar continuidade às ações do PCN, com organização e transparência. Apoiar um novo caminho é acreditar no potencial das pessoas e oferecer condições para que suas ideias avancem.",
         "avatar": "assets/people/integrante-09.webp",
         "miniatura": "assets/people/integrante-09-small.webp",
         "x": "50%",
@@ -144,19 +144,19 @@ window.PNC_DATA = {
         "nome": "Yasmin Guidini",
         "cargo": "Comunicadora",
         "area": "Comunicação",
-        "bio": "Yasmin Guidini dá voz às ideias do PNC e aproxima o partido da comunidade. Sua missão é comunicar as propostas de forma clara, acessível e envolvente, abrindo espaço para o diálogo e a participação. Cada mensagem pode criar uma conexão: comunicar com confiança e responsabilidade ajuda a transformar interesse em colaboração e ideias em movimento.",
+        "bio": "Yasmin Guidini dá voz às ideias do PCN e aproxima o partido da comunidade. Sua missão é comunicar as propostas de forma clara, acessível e envolvente, abrindo espaço para o diálogo e a participação. Cada mensagem pode criar uma conexão: comunicar com confiança e responsabilidade ajuda a transformar interesse em colaboração e ideias em movimento.",
         "avatar": "assets/people/integrante-10.webp",
         "miniatura": "assets/people/integrante-10-small.webp",
         "x": "50%",
         "y": "20%",
-        "resumo": "Uma voz clara e próxima para conectar o PNC à comunidade."
+        "resumo": "Uma voz clara e próxima para conectar o PCN à comunidade."
     }
 ],
   noticias: [
-    { id: 'programa', categoria: 'Propostas', titulo: 'Cinco frentes. Um compromisso com a cidade.', resumo: 'Conheça as prioridades que conectam qualidade de vida e desenvolvimento no programa do PNC.', imagem: 'assets/cidade.jpg', alt: 'Vista de edifícios e áreas verdes em uma cidade', leitura: '3 min', destaque: true, paragrafos: ['O programa municipal do PNC se organiza em cinco frentes: moradia segura, transporte acessível, saneamento, modernização industrial e escolas abertas à comunidade.', 'O que une essas propostas é a preocupação com a vida nos bairros e com o retorno social dos investimentos. Cada programa deve ter financiamento definido, critérios públicos, metas e acompanhamento.', 'As propostas são um ponto de partida para o debate interdisciplinar. Custos e cronogramas dependem de levantamento técnico e do orçamento disponível.'], proposta: 'moradia' },
-    { id: 'escolas', categoria: 'Educação', titulo: 'Quando a escola abre, a comunidade ganha caminhos.', resumo: 'Esporte, cultura e tecnologia podem ampliar o uso de espaços que já fazem parte dos bairros.', imagem: 'assets/educacao.jpg', alt: 'Estudantes em um ambiente de aprendizado', leitura: '2 min', paragrafos: ['O PNC propõe um programa de atividades em escolas de bairros com poucas opções gratuitas. As oficinas devem ser escolhidas com estudantes e moradores.', 'Abrir o prédio exige profissionais, limpeza, segurança, acessibilidade, materiais e manutenção. O programa deve ter estrutura própria para preservar as aulas e evitar sobrecarga da equipe escolar.', 'A expansão precisa considerar a participação e os resultados. Nas escolas estaduais, a execução depende de articulação com o governo estadual.'], proposta: 'educacao' },
-    { id: 'visao', categoria: 'O partido', titulo: 'Além dos rótulos: como o PNC avalia uma proposta.', resumo: 'Ouvir, planejar, executar e avaliar. Uma forma de pensar a política a partir de problemas concretos.', imagem: 'assets/comunidade.jpg', alt: 'Grupo de jovens reunidos ao ar livre', leitura: '2 min', paragrafos: ['O Partido Novo Caminho busca soluções que beneficiem a população e favoreçam o desenvolvimento, sem se limitar à divisão habitual entre esquerda e direita.', 'Para avaliar uma proposta, perguntamos quem será atendido, qual problema será resolvido, quanto custará, como será financiada e quais resultados poderão ser acompanhados.', 'Participação, dignidade, responsabilidade ambiental e transparência são os critérios que orientam esse caminho.'] },
-    { id: 'transporte', categoria: 'Propostas', titulo: 'Transporte acessível também precisa de qualidade.', resumo: 'A proposta de gratuidade por etapas depende de financiamento, frota e metas de atendimento.', imagem: 'assets/cidade.jpg', alt: 'Paisagem urbana com ruas e edifícios', leitura: '2 min', paragrafos: ['A passagem pesa no acesso ao trabalho, ao estudo e aos serviços. Por isso, o PNC defende transporte mais barato e a expansão gradual da gratuidade, com o objetivo de chegar à tarifa zero.', 'Cada etapa deve ter fonte de financiamento definida e capacidade de atendimento. Os subsídios precisam estar vinculados à frequência, à pontualidade, à acessibilidade e à cobertura dos bairros.', 'A proposta inclui publicar os custos do sistema e planejar o reforço da frota quando a procura aumentar.'], proposta: 'transporte' },
-    { id: 'industria', categoria: 'Desenvolvimento', titulo: 'Modernizar a indústria com retorno para a sociedade.', resumo: 'Eficiência, qualificação e contrapartidas verificáveis precisam acompanhar o apoio público.', imagem: 'assets/cidade.jpg', alt: 'Edifícios em uma área urbana', leitura: '2 min', paragrafos: ['O PNC propõe apoiar a modernização industrial com compromissos ambientais e sociais verificáveis. A prioridade é reduzir consumo de energia e água, reaproveitar materiais e diminuir emissões.', 'O benefício deve exigir metas proporcionais, prazos e divulgação dos resultados. A qualificação durante a jornada e a negociação sobre mudanças nas funções também fazem parte da proposta.', 'O descumprimento deve gerar consequências, como suspensão do benefício ou devolução proporcional de recursos.'], proposta: 'industria' }
+    { id: 'programa', categoria: 'Propostas', titulo: 'Cinco frentes. Um compromisso com a cidade.', resumo: 'Conheça as prioridades que conectam qualidade de vida e desenvolvimento no programa do PCN.', imagem: 'assets/cidade.jpg', alt: 'Vista de edifícios e áreas verdes em uma cidade', leitura: '3 min', destaque: true, paragrafos: ['O programa municipal do PCN se organiza em cinco frentes: moradia segura, transporte acessível, saneamento, modernização industrial e escolas abertas à comunidade.', 'O que une essas propostas é a preocupação com a vida nos bairros e com o retorno social dos investimentos. Cada programa deve ter financiamento definido, critérios públicos, metas e acompanhamento.', 'As propostas são um ponto de partida para o debate interdisciplinar. Custos e cronogramas dependem de levantamento técnico e do orçamento disponível.'], proposta: 'moradia' },
+    { id: 'escolas', categoria: 'Educação', titulo: 'Quando a escola abre, a comunidade ganha caminhos.', resumo: 'Esporte, cultura e tecnologia podem ampliar o uso de espaços que já fazem parte dos bairros.', imagem: 'assets/educacao.jpg', alt: 'Estudantes em um ambiente de aprendizado', leitura: '2 min', paragrafos: ['O PCN propõe um programa de atividades em escolas de bairros com poucas opções gratuitas. As oficinas devem ser escolhidas com estudantes e moradores.', 'Abrir o prédio exige profissionais, limpeza, segurança, acessibilidade, materiais e manutenção. O programa deve ter estrutura própria para preservar as aulas e evitar sobrecarga da equipe escolar.', 'A expansão precisa considerar a participação e os resultados. Nas escolas estaduais, a execução depende de articulação com o governo estadual.'], proposta: 'educacao' },
+    { id: 'visao', categoria: 'O partido', titulo: 'Além dos rótulos: como o PCN avalia uma proposta.', resumo: 'Ouvir, planejar, executar e avaliar. Uma forma de pensar a política a partir de problemas concretos.', imagem: 'assets/comunidade.jpg', alt: 'Grupo de jovens reunidos ao ar livre', leitura: '2 min', paragrafos: ['O Partido Caminho Novo busca soluções que beneficiem a população e favoreçam o desenvolvimento, sem se limitar à divisão habitual entre esquerda e direita.', 'Para avaliar uma proposta, perguntamos quem será atendido, qual problema será resolvido, quanto custará, como será financiada e quais resultados poderão ser acompanhados.', 'Participação, dignidade, responsabilidade ambiental e transparência são os critérios que orientam esse caminho.'] },
+    { id: 'transporte', categoria: 'Propostas', titulo: 'Transporte acessível também precisa de qualidade.', resumo: 'A proposta de gratuidade por etapas depende de financiamento, frota e metas de atendimento.', imagem: 'assets/cidade.jpg', alt: 'Paisagem urbana com ruas e edifícios', leitura: '2 min', paragrafos: ['A passagem pesa no acesso ao trabalho, ao estudo e aos serviços. Por isso, o PCN defende transporte mais barato e a expansão gradual da gratuidade, com o objetivo de chegar à tarifa zero.', 'Cada etapa deve ter fonte de financiamento definida e capacidade de atendimento. Os subsídios precisam estar vinculados à frequência, à pontualidade, à acessibilidade e à cobertura dos bairros.', 'A proposta inclui publicar os custos do sistema e planejar o reforço da frota quando a procura aumentar.'], proposta: 'transporte' },
+    { id: 'industria', categoria: 'Desenvolvimento', titulo: 'Modernizar a indústria com retorno para a sociedade.', resumo: 'Eficiência, qualificação e contrapartidas verificáveis precisam acompanhar o apoio público.', imagem: 'assets/cidade.jpg', alt: 'Edifícios em uma área urbana', leitura: '2 min', paragrafos: ['O PCN propõe apoiar a modernização industrial com compromissos ambientais e sociais verificáveis. A prioridade é reduzir consumo de energia e água, reaproveitar materiais e diminuir emissões.', 'O benefício deve exigir metas proporcionais, prazos e divulgação dos resultados. A qualificação durante a jornada e a negociação sobre mudanças nas funções também fazem parte da proposta.', 'O descumprimento deve gerar consequências, como suspensão do benefício ou devolução proporcional de recursos.'], proposta: 'industria' }
   ]
 };
