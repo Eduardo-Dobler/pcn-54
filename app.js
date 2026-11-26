@@ -89,7 +89,7 @@
   let timer = null;
   let startedAt = 0;
   let remaining = duration;
-  let userPaused = motion.matches;
+  let userPaused = false;
   let focusInside = false;
   let carouselVisible = true;
   let currentPage = '';
@@ -124,7 +124,7 @@
     $('#carousel-pause').setAttribute('aria-label', paused ? 'Iniciar carrossel' : 'Pausar carrossel');
     $('#carousel-pause').title = paused ? 'Iniciar carrossel' : 'Pausar carrossel';
     $('#hero-slides').setAttribute('aria-live', running ? 'off' : 'polite');
-    $('#carousel-status').textContent = paused ? (motion.matches ? 'Movimento reduzido · pressione iniciar' : 'Carrossel pausado') : running ? `Troca automática · ${duration / 1000} segundos` : 'Pausa durante a interação';
+    $('#carousel-status').textContent = paused ? 'Carrossel pausado' : running ? `Troca automática · ${duration / 1000} segundos` : 'Pausa durante a interação';
     progressFill.style.animationPlayState = running ? 'running' : 'paused';
     if (running) {
       startedAt = performance.now();
@@ -144,7 +144,7 @@
   carousel.addEventListener('touchend', e => { if (!touchStart) return; const dx = e.changedTouches[0].clientX - touchStart.x; const dy = e.changedTouches[0].clientY - touchStart.y; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) changeSlide(slideIndex + (dx < 0 ? 1 : -1)); touchStart = null; }, { passive: true });
   carousel.addEventListener('touchcancel', () => { touchStart = null; });
   document.addEventListener('visibilitychange', syncCarousel);
-  motion.addEventListener('change', () => { userPaused = motion.matches; showSlide(slideIndex); syncCarousel(); revealContent(); });
+  motion.addEventListener('change', () => { showSlide(slideIndex); syncCarousel(); revealContent(); });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => { carouselVisible = entries[0].isIntersecting; syncCarousel(); }, { threshold: 0.15 }).observe(carousel);
   }
