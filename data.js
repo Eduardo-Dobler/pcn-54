@@ -40,7 +40,7 @@ window.PCN_DATA = {
         "texto": "Indústria mais sustentável e escolas abertas à comunidade. Crescimento com qualificação, cultura e novas oportunidades.",
         "botao": "Explore nosso programa",
         "destino": "#sobre/programa",
-        "imagem": "assets/people/integrante-01.webp",
+        "imagem": "assets/people/integrante-04.webp",
         "alt": "Integrante do projeto com traje formal e distintivo do PCN",
         "formato": "portrait",
         "x": "50%",
