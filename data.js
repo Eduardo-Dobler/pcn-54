@@ -64,12 +64,12 @@ window.PCN_DATA = {
   ],
   integrantes: [
     {
-        "nome": "Matheus Vanin",
+        "nome": "Theresa Venzon",
         "cargo": "Presidente",
         "area": "Presidência",
-        "bio": "Matheus Vanin assume a presidência com um compromisso claro: unir pessoas em torno de um projeto que coloque a população em primeiro lugar. Sua função é dar direção ao PCN, ouvir diferentes perspectivas e manter a equipe focada em propostas responsáveis. Liderar é construir confiança e incentivar cada integrante a contribuir para um futuro com mais oportunidades.",
-        "avatar": "assets/people/integrante-01.webp",
-        "miniatura": "assets/people/integrante-01-small.webp",
+        "bio": "Theresa Venzon assume a presidência com um compromisso claro: unir pessoas em torno de um projeto que coloque a população em primeiro lugar. Sua função é dar direção ao PCN, ouvir diferentes perspectivas e manter a equipe focada em propostas responsáveis. Liderar é construir confiança e incentivar cada integrante a contribuir para um futuro com mais oportunidades.",
+        "avatar": "assets/people/integrante-06.webp",
+        "miniatura": "assets/people/integrante-06-small.webp",
         "x": "50%",
         "y": "20%",
         "resumo": "Liderança para unir a equipe e transformar boas ideias em um caminho possível."
@@ -97,12 +97,12 @@ window.PCN_DATA = {
         "resumo": "Organização e energia para aproximar nossas ideias da comunidade."
     },
     {
-        "nome": "Theresa Venzon",
-        "cargo": "Especialista Técnica",
+        "nome": "Matheus Vanin",
+        "cargo": "Especialista Técnico",
         "area": "Análise técnica",
-        "bio": "Theresa Venzon tem a missão de dar consistência técnica às ideias do PCN. Seu trabalho é analisar possibilidades, avaliar desafios e ajudar a transformar objetivos em propostas que possam ser executadas e acompanhadas. Com atenção aos detalhes e compromisso com a qualidade, contribui para que a confiança no futuro venha acompanhada de planejamento e responsabilidade.",
-        "avatar": "assets/people/integrante-06.webp",
-        "miniatura": "assets/people/integrante-06-small.webp",
+        "bio": "Matheus Vanin tem a missão de dar consistência técnica às ideias do PCN. Seu trabalho é analisar possibilidades, avaliar desafios e ajudar a transformar objetivos em propostas que possam ser executadas e acompanhadas. Com atenção aos detalhes e compromisso com a qualidade, contribui para que a confiança no futuro venha acompanhada de planejamento e responsabilidade.",
+        "avatar": "assets/people/integrante-01.webp",
+        "miniatura": "assets/people/integrante-01-small.webp",
         "x": "50%",
         "y": "20%",
         "resumo": "Análise e responsabilidade para dar consistência às propostas do partido."

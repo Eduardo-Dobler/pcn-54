@@ -26,7 +26,7 @@ Todos os arquivos do site ficam na raiz deste repositório. A pasta `assets/` co
 
 A primeira foto enviada está em `assets/people/candidato.webp` e aparece na abertura do carrossel e no destaque da aba Integrantes. Edite `candidato` em `data.js` para acrescentar o nome e a apresentação pessoal.
 
-Os oito retratos da equipe seguem a ordem informada: Matheus Vanin (Presidente), Eduardo Dobler (Vice-Presidente), Ana Laura (Coordenadora de Campanha), Theresa Venzon (Especialista Técnica), Vinicius Petry (Assessor), Cristiano Luca (Pesquisador), Mateus Sjlender (Financiador) e Yasmin Guidini (Comunicadora).
+Os oito retratos da equipe seguem a ordem informada: Theresa Venzon (Presidente), Eduardo Dobler (Vice-Presidente), Ana Laura (Coordenadora de Campanha), Matheus Vanin (Especialista Técnico), Vinicius Petry (Assessor), Cristiano Luca (Pesquisador), Mateus Sjlender (Financiador) e Yasmin Guidini (Comunicadora).
 
 Cada perfil tem uma frase de destaque no cartão e uma apresentação completa na janela de detalhes, redigidas a partir da função informada. Para editar, ajuste `nome`, `cargo`, `area`, `resumo` e `bio` na lista `integrantes` de `data.js`.
 
