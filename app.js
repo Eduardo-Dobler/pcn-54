@@ -83,14 +83,13 @@
   const carousel = $('#hero-carousel');
   const slides = $$('.hero-slide');
   const progressFill = $('#carousel-progress-fill');
-  const duration = Math.max(3000, Number(data.carrossel.intervalo) || 6000);
+  const duration = Math.max(3000, Number(data.carrossel.intervalo) || 5000);
   carousel.style.setProperty('--slide-duration', `${duration}ms`);
   let slideIndex = 0;
   let timer = null;
   let startedAt = 0;
   let remaining = duration;
-  let userPaused = false;
-  let hovered = false;
+  let userPaused = motion.matches;
   let focusInside = false;
   let carouselVisible = true;
   let currentPage = '';
@@ -119,13 +118,13 @@
   }
   function syncCarousel() {
     stopTimer();
-    const paused = userPaused || motion.matches;
-    const running = !paused && !hovered && !focusInside && !document.hidden && carouselVisible && currentPage === 'inicio' && !$('#detail-dialog').open;
+    const paused = userPaused;
+    const running = !paused && (!focusInside || document.activeElement === $('#carousel-pause')) && !document.hidden && carouselVisible && currentPage === 'inicio' && !$('#detail-dialog').open;
     $('#carousel-pause').textContent = paused ? '▷' : 'Ⅱ';
-    $('#carousel-pause').setAttribute('aria-label', motion.matches ? 'Troca automática desativada por preferência de movimento reduzido' : (paused ? 'Retomar carrossel' : 'Pausar carrossel'));
-    $('#carousel-pause').disabled = motion.matches;
+    $('#carousel-pause').setAttribute('aria-label', paused ? 'Iniciar carrossel' : 'Pausar carrossel');
+    $('#carousel-pause').title = paused ? 'Iniciar carrossel' : 'Pausar carrossel';
     $('#hero-slides').setAttribute('aria-live', running ? 'off' : 'polite');
-    $('#carousel-status').textContent = motion.matches ? 'Movimento reduzido · use as setas' : paused ? 'Carrossel pausado' : running ? `Troca automática · ${duration / 1000} segundos` : 'Pausa durante a interação';
+    $('#carousel-status').textContent = paused ? (motion.matches ? 'Movimento reduzido · pressione iniciar' : 'Carrossel pausado') : running ? `Troca automática · ${duration / 1000} segundos` : 'Pausa durante a interação';
     progressFill.style.animationPlayState = running ? 'running' : 'paused';
     if (running) {
       startedAt = performance.now();
@@ -137,8 +136,6 @@
   $('#carousel-prev').addEventListener('click', () => changeSlide(slideIndex - 1));
   $('#carousel-pause').addEventListener('click', () => { userPaused = !userPaused; syncCarousel(); });
   $('#slide-dots').addEventListener('click', e => { const b = e.target.closest('[data-slide]'); if (b) changeSlide(Number(b.dataset.slide)); });
-  carousel.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; syncCarousel(); } });
-  carousel.addEventListener('pointerleave', () => { hovered = false; syncCarousel(); });
   carousel.addEventListener('focusin', () => { focusInside = true; syncCarousel(); });
   carousel.addEventListener('focusout', e => { focusInside = carousel.contains(e.relatedTarget); syncCarousel(); });
   carousel.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(slideIndex + (e.key === 'ArrowRight' ? 1 : -1)); } });
@@ -147,7 +144,7 @@
   carousel.addEventListener('touchend', e => { if (!touchStart) return; const dx = e.changedTouches[0].clientX - touchStart.x; const dy = e.changedTouches[0].clientY - touchStart.y; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) changeSlide(slideIndex + (dx < 0 ? 1 : -1)); touchStart = null; }, { passive: true });
   carousel.addEventListener('touchcancel', () => { touchStart = null; });
   document.addEventListener('visibilitychange', syncCarousel);
-  motion.addEventListener('change', () => { showSlide(slideIndex); syncCarousel(); revealContent(); });
+  motion.addEventListener('change', () => { userPaused = motion.matches; showSlide(slideIndex); syncCarousel(); revealContent(); });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => { carouselVisible = entries[0].isIntersecting; syncCarousel(); }, { threshold: 0.15 }).observe(carousel);
   }

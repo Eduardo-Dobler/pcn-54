@@ -36,10 +36,10 @@ Para trocar um retrato, ajuste `avatar` (imagem completa), `miniatura` (cartão)
 
 ## Carrossel e animações
 
-- A troca automática começa ao abrir a página, com intervalo de 6 segundos, transição suave e barra de progresso. Ajuste `carrossel.intervalo` em `data.js`, em milissegundos.
+- A troca automática começa ao abrir a página, com intervalo de 5 segundos, transição suave e barra de progresso. Ajuste `carrossel.intervalo` em `data.js`, em milissegundos.
 - Setas, indicadores, teclado e deslize horizontal permitem navegação manual.
-- A pausa manual e as pausas por ponteiro, foco, janela oculta, rolagem para fora do carrossel, outra aba e modal conservam o tempo restante.
-- A preferência de movimento reduzido do sistema desativa a troca automática e as animações; as setas continuam disponíveis.
+- A pausa manual e as pausas por foco nos demais controles, janela oculta, rolagem para fora do carrossel, outra aba e modal conservam o tempo restante.
+- A preferência de movimento reduzido do sistema mantém a troca automática inicialmente pausada e desativa as animações; o botão central permite iniciar o carrossel.
 - Cartões e seções aparecem suavemente durante a rolagem. Modais, menus e botões têm transições discretas, com conteúdo acessível por teclado.
 
 ## Configurar contatos
@@ -71,7 +71,7 @@ O formulário valida os campos e prepara uma mensagem que pode ser revisada, cop
 
 As abas usam endereços com hash, por exemplo `index.html#integrantes` e `index.html#sobre/programa`, o que permite abrir o site localmente e usar o botão Voltar do navegador.
 
-O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A troca automática pausa quando o ponteiro ou o foco estão na área e respeita a preferência de movimento reduzido do sistema.
+O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A troca automática pausa quando o foco está nos demais controles do carrossel e começa pausada se o sistema solicitar movimento reduzido.
 
 ## Fontes e créditos
 

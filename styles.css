@@ -32,7 +32,7 @@
 .hero-slide.is-active .hero-copy{transform:translateY(0)}
 .hero-art{min-width:0}
 .hero-photo{inset:20px 12px 30px 35px;border-radius:100px 24px 72px 24px;transform:none;border-color:rgba(255,211,63,.24);background:#1a1420;box-shadow:0 24px 65px #0005}
-.hero-photo img{object-fit:cover;filter:none;transform:scale(1.055);transition:transform 6s linear}
+.hero-photo img{object-fit:cover;filter:none;transform:scale(1.055);transition:transform 5s linear}
 .hero-slide.is-active .hero-photo img{transform:scale(1)}
 .hero-photo::after{background:linear-gradient(0deg,rgba(15,9,25,.9),transparent 45%);pointer-events:none}
 .hero-photo--team{inset:65px 0 75px 0;border-radius:24px}
@@ -45,7 +45,7 @@
 .carousel-timing{display:flex;align-items:center;gap:16px;max-width:360px;margin-top:10px;color:#c0b0ce;font-size:9px;letter-spacing:.3px;min-height:16px}
 .carousel-timing>span{white-space:nowrap}
 .carousel-progress{height:3px;border-radius:6px;background:#ffffff12;flex:1;overflow:hidden}
-.carousel-progress>span{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a675d4,var(--gold));transform:scaleX(0);transform-origin:left;animation:carousel-fill var(--slide-duration,6000ms) linear forwards;animation-play-state:paused}
+.carousel-progress>span{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a675d4,var(--gold));transform:scaleX(0);transform-origin:left;animation:carousel-fill var(--slide-duration,5000ms) linear forwards;animation-play-state:paused}
 @keyframes carousel-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .slide-dot{transition:width .3s var(--ease-out),background .3s}
 .carousel-controls .icon-button{width:40px;height:40px}
@@ -105,3 +105,7 @@
 .member-copy .member-statement{font-size:11px;line-height:1.8;margin-top:14px;margin-bottom:19px;color:#c5b6d1}
 .member-card .member-copy button{margin-top:auto}
 @media(max-width:540px){.member-copy .member-statement{font-size:10px;line-height:1.75;margin-top:12px;margin-bottom:16px}}
+
+/* Controle central do carrossel */
+#carousel-pause{position:absolute;z-index:5;left:50%;bottom:78px;transform:translateX(-50%);width:44px;height:44px;background:rgba(35,24,51,.9);border-color:rgba(255,211,63,.55);color:var(--gold)}
+@media(max-width:540px){#carousel-pause{position:relative;left:auto;bottom:auto;transform:none;margin:8px auto 12px}}

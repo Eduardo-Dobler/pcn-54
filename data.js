@@ -3,7 +3,7 @@
 window.PCN_DATA = {
   partido: { nome: 'Partido Caminho Novo', sigla: 'PCN', numero: '54' },
   contatos: { email: '', whatsapp: '', instagram: '' },
-  carrossel: { intervalo: 6000 },
+  carrossel: { intervalo: 5000 },
   candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PCN · 54", "area": "Partido Caminho Novo", "bio": "À frente da candidatura do projeto interdisciplinar, representa a proposta de unir o bem-estar da população ao desenvolvimento da cidade. Nome e apresentação pessoal serão atualizados pela equipe.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
   slides: [
     {
