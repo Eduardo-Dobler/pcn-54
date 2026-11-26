@@ -16,6 +16,9 @@
     bus: '<rect x="5" y="3" width="14" height="17" rx="3"></rect><path d="M5 11h14M8 20v2m8-2v2M9 16h.01M15 16h.01"></path>',
     drop: '<path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13Z"></path><path d="M8 15a4 4 0 0 0 4 4"></path>',
     factory: '<path d="M3 21V10l6 3V8l6 3V3h4v18ZM3 21h18M7 17h1m4 0h1m4 0h1"></path>',
+    recycle: '<path d="M8 6l2-3a2 2 0 0 1 3 0l3 5m0-4v4h-4M19 10l2 4a2 2 0 0 1-2 3h-6m3-3-3 3 3 3M10 17H5a2 2 0 0 1-2-3l3-5m-4 2 4-2 2 4"></path>',
+    leaf: '<path d="M20 4C11 3 5 7 5 14a5 5 0 0 0 5 5c7 0 11-6 10-15ZM4 21l10-10"></path>',
+    computer: '<rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M12 16v4m-4 0h8"></path>',
     book: '<path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1m0-15c3-2 6-2 10-1v15c-4-1-7-1-10 1Zm0 0v15"></path>',
     people: '<circle cx="9" cy="7" r="3"></circle><path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 11v-3a6 6 0 0 0-3-5"></path>',
     chart: '<path d="M3 3v18h18M7 16l4-5 4 2 6-7M17 6h4v4"></path>',
@@ -40,7 +43,7 @@
 
   // Propostas e programa aprofundado usam a mesma fonte de conteúdo.
   $('#proposal-grid').innerHTML = data.propostas.map(p => `<article class="proposal-card glass"><div class="proposal-top">${iconBox(p.icone)}<span class="proposal-number">${escapeHTML(p.numero)}</span></div><h3>${titleHTML(p.titulo)}</h3><p>${escapeHTML(p.curto)}</p><button class="card-link" type="button" data-proposal="${escapeHTML(p.id)}">Explore a proposta<span class="sr-only">: ${escapeHTML(p.categoria.toLowerCase())}</span></button></article>`).join('');
-  const proposalBody = p => `<div class="program-body"><p>${escapeHTML(p.descricao)}</p><h4>Como colocar em prática</h4><ul>${p.acoes.map(a => `<li>${escapeHTML(a)}</li>`).join('')}</ul><div class="program-details"><div><h4>Financiamento proposto</h4><p>${escapeHTML(p.financiamento)}</p></div><div><h4>O que acompanhar</h4><p>${escapeHTML(p.resultado)}</p></div></div></div>`;
+  const proposalBody = p => `<div class="program-body"><p>${escapeHTML(p.descricao)}</p><h4>Como colocar em prática</h4><ul>${p.acoes.map(a => `<li>${escapeHTML(a)}</li>`).join('')}</ul><div class="program-details"><div><h4>Investimento estimado</h4><p><strong>${escapeHTML(p.investimento)}</strong><br>${escapeHTML(p.alcance)}</p></div><div><h4>Viabilidade técnica</h4><p>${escapeHTML(p.viabilidade)}</p></div></div></div>`;
   $('#program-list').innerHTML = data.propostas.map(p => `<details class="program-item glass" id="program-${escapeHTML(p.id)}"><summary><span class="program-no">${escapeHTML(p.numero)}</span>${iconBox(p.icone)}<h3>${escapeHTML(textTitle(p.titulo))}</h3><span class="program-toggle" aria-hidden="true">+</span></summary>${proposalBody(p)}</details>`).join('');
   $('#principle-grid').innerHTML = data.principios.map(p => `<article class="principle-card glass">${iconBox(p.icone)}<h3>${escapeHTML(p.titulo)}</h3><p>${escapeHTML(p.texto)}</p></article>`).join('');
 

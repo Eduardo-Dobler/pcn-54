@@ -4,12 +4,12 @@ window.PCN_DATA = {
   partido: { nome: 'Partido Caminho Novo', sigla: 'PCN', numero: '54' },
   contatos: { email: '', whatsapp: '', instagram: '' },
   carrossel: { intervalo: 5000 },
-  candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PCN · 54", "area": "Partido Caminho Novo", "bio": "À frente da candidatura do projeto interdisciplinar, representa a proposta de unir o bem-estar da população ao desenvolvimento da cidade. Nome e apresentação pessoal serão atualizados pela equipe.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
+  candidato: {"nome": "Nosso candidato", "cargo": "Candidato do PCN · 54", "area": "Partido Caminho Novo", "bio": "À frente da candidatura do projeto interdisciplinar, apresenta cinco propostas nacionais que partem de necessidades locais e podem ser ampliadas em etapas.", "avatar": "assets/people/candidato.webp", "miniatura": "assets/people/candidato-small.webp", "x": "50%", "y": "24%"},
   slides: [
     {
         "tag": "NOSSO CANDIDATO · PCN 54",
         "titulo": "O futuro pede<br>um <em>novo caminho.</em>",
-        "texto": "Além dos rótulos, perto das pessoas. Nosso candidato representa o compromisso do PCN com qualidade de vida, oportunidades e desenvolvimento.",
+        "texto": "Cinco propostas para o Brasil, com ações que começam nas regiões mais vulneráveis e nas cidades participantes.",
         "botao": "Conheça nosso candidato",
         "destino": "#integrantes/candidato",
         "imagem": "assets/people/candidato.webp",
@@ -18,7 +18,7 @@ window.PCN_DATA = {
         "x": "50%",
         "y": "24%",
         "detalhe": "CANDIDATO DO PARTIDO",
-        "legenda": "Pessoas em primeiro lugar.<br>Um novo caminho para a cidade."
+        "legenda": "Pessoas em primeiro lugar.<br>Um novo caminho para o Brasil."
     },
     {
         "tag": "DIFERENTES OLHARES · UM MESMO PROPÓSITO",
@@ -37,7 +37,7 @@ window.PCN_DATA = {
     {
         "tag": "OPORTUNIDADES PARA O PRESENTE E O FUTURO",
         "titulo": "Desenvolver.<br>Incluir. <em>Avançar.</em>",
-        "texto": "Indústria mais sustentável e escolas abertas à comunidade. Crescimento com qualificação, cultura e novas oportunidades.",
+        "texto": "Da coleta seletiva às compras da agricultura familiar e aos cursos de tecnologia, conheça as iniciativas que começariam em diferentes regiões do Brasil.",
         "botao": "Explore nosso programa",
         "destino": "#sobre/programa",
         "imagem": "assets/people/integrante-04.webp",
@@ -46,15 +46,95 @@ window.PCN_DATA = {
         "x": "50%",
         "y": "25%",
         "detalhe": "DESENVOLVIMENTO COM PROPÓSITO",
-        "legenda": "Mais oportunidades.<br>Mais caminhos possíveis."
+        "legenda": "Produção local.<br>Mais inclusão digital."
     }
 ],
   propostas: [
-    { id: 'moradia', numero: '01', categoria: 'MORADIA', titulo: 'Um lugar seguro<br>para chamar de lar.', curto: 'Proteção e moradia digna para famílias em áreas de risco, com soluções construídas junto aos moradores.', icone: 'home', frase: 'Segurança também depende de onde fica a nova casa.', descricao: 'Combinar obras de proteção onde for possível permanecer com segurança e reassentamento onde o risco não puder ser controlado. A decisão deve contar com avaliação técnica e participação dos moradores.', acoes: ['Mapear os riscos e priorizar a gravidade e a vulnerabilidade das famílias.', 'Oferecer moradia temporária enquanto a solução definitiva é preparada.', 'Buscar novas moradias próximas de transporte, escolas, serviços e trabalho.', 'Recuperar e fiscalizar terrenos desocupados para evitar novas ocupações.'], financiamento: 'Combinar orçamento municipal com recursos estaduais e federais de habitação e prevenção de desastres. Os valores precisam ser definidos após levantamento técnico e análise do orçamento.', resultado: 'Acompanhar famílias atendidas, tempo de espera e acesso a serviços na nova moradia.' },
-    { id: 'transporte', numero: '02', categoria: 'MOBILIDADE', titulo: 'Menos barreiras.<br>Mais movimento.', curto: 'Transporte público mais barato, com expansão gradual da gratuidade e compromisso com a qualidade.', icone: 'bus', frase: 'A passagem acessível precisa vir junto de um ônibus que funciona.', descricao: 'Ampliar a gratuidade por etapas, com o objetivo de chegar à tarifa zero, condicionando cada expansão à existência de financiamento e capacidade de atendimento.', acoes: ['Começar pelos grupos para os quais a passagem mais dificulta o acesso a estudo, trabalho e serviços.', 'Publicar os custos do sistema e os pagamentos às operadoras.', 'Vincular os subsídios a metas de frequência, pontualidade, acessibilidade e atendimento aos bairros.', 'Planejar reforço da frota quando a demanda aumentar.'], financiamento: 'Criar previsão permanente no orçamento municipal, com fonte de receita definida antes de ampliar o benefício.', resultado: 'Medir tempo de espera, viagens realizadas, acessibilidade e custo por passageiro.' },
-    { id: 'saneamento', numero: '03', categoria: 'SANEAMENTO', titulo: 'Dignidade começa<br>pelo básico.', curto: 'Água, coleta e tratamento de esgoto nos bairros menos atendidos, com acesso à tarifa social.', icone: 'drop', frase: 'Uma rede só cumpre sua função quando as famílias conseguem utilizá-la.', descricao: 'Estabelecer um plano de expansão que priorize necessidade social, risco à saúde e impacto ambiental, com critérios públicos para escolher as primeiras obras.', acoes: ['Divulgar regiões sem atendimento adequado e o cronograma de expansão.', 'Garantir que a ampliação da coleta venha acompanhada de tratamento do esgoto.', 'Prever apoio à ligação das casas de famílias de baixa renda à rede.', 'Facilitar o acesso à tarifa social de água e esgoto.'], financiamento: 'Combinar investimentos do prestador do serviço, recursos públicos e financiamentos para infraestrutura, com metas e fiscalização.', resultado: 'Acompanhar cobertura, ligações realizadas, tratamento do esgoto e alcance da tarifa social.' },
-    { id: 'industria', numero: '04', categoria: 'DESENVOLVIMENTO', titulo: 'Uma indústria forte.<br>Um futuro sustentável.', curto: 'Modernização industrial com metas ambientais, qualificação e proteção dos trabalhadores.', icone: 'factory', frase: 'Apoio público precisa produzir retorno demonstrável para a sociedade.', descricao: 'Oferecer apoio à modernização industrial mediante compromissos ambientais e sociais verificáveis. Crescimento econômico e responsabilidade com quem trabalha devem caminhar juntos.', acoes: ['Apoiar eficiência no uso de energia e água, reaproveitamento de materiais e redução de emissões.', 'Exigir metas proporcionais ao apoio recebido, com prazos e resultados públicos.', 'Prever qualificação durante a jornada e negociação sobre mudanças nas funções.', 'Estabelecer suspensão do benefício ou devolução proporcional de recursos em caso de descumprimento.'], financiamento: 'Combinar participação financeira das empresas, crédito para modernização e apoio municipal limitado à capacidade do município.', resultado: 'Verificar redução do consumo e das emissões, trabalhadores qualificados e cumprimento das contrapartidas.' },
-    { id: 'educacao', numero: '05', categoria: 'EDUCAÇÃO & CULTURA', titulo: 'Escolas abertas.<br>Possibilidades também.', curto: 'Esporte, cultura e tecnologia nas escolas, ampliando oportunidades para a comunidade.', icone: 'book', frase: 'Abrir a escola exige equipe, estrutura e cuidado com as aulas regulares.', descricao: 'Começar em escolas de bairros com poucas opções gratuitas e ampliar o programa conforme a participação e os resultados.', acoes: ['Escolher esporte, música, teatro, informática e oficinas junto a estudantes e moradores.', 'Contratar ou remunerar profissionais, incluindo limpeza e segurança.', 'Garantir acessibilidade, materiais e manutenção.', 'Articular com a rede de ensino e buscar acordo com o governo estadual quando necessário.'], financiamento: 'Utilizar recursos municipais de educação, cultura e esporte conforme a finalidade de cada despesa, além de parcerias com instituições de formação.', resultado: 'Acompanhar participação, diversidade de atividades, condições de funcionamento e impacto sobre o uso da escola.' }
+    {
+      "id": "rede-brasil-alerta",
+      "numero": "01",
+      "categoria": "PREVENÇÃO",
+      "titulo": "Rede Brasil Alerta",
+      "curto": "Monitoramento e avisos antecipados para cidades expostas a enchentes, alagamentos e outros eventos climáticos extremos.",
+      "icone": "drop",
+      "descricao": "Ampliar o monitoramento e os alertas nas áreas de risco, começando pelas regiões mais vulneráveis. A rede ajudaria a população a receber avisos a tempo e saber como agir. O sistema complementaria as obras de drenagem e prevenção.",
+      "acoes": [
+        "Instalar sensores em áreas de risco e integrar os dados à previsão meteorológica.",
+        "Articular o monitoramento com as Defesas Civis estaduais e municipais.",
+        "Enviar avisos por celular, ativar sirenes e usar canais que alcancem quem não tem internet constante."
+      ],
+      "investimento": "R$ 1,5 bilhão",
+      "alcance": "Primeira etapa nacional de quatro anos, com prioridade para as regiões mais vulneráveis.",
+      "viabilidade": "Tecnologias de monitoramento, previsão e envio de alertas já existem. A implantação depende da integração dessas ferramentas e da cooperação entre as Defesas Civis."
+    },
+    {
+      "id": "periferia-conectada",
+      "numero": "02",
+      "categoria": "MOBILIDADE",
+      "titulo": "Periferia Conectada",
+      "curto": "Reorganizar linhas e horários de ônibus para reduzir esperas e melhorar as conexões nos bairros mais afastados.",
+      "icone": "bus",
+      "descricao": "Melhorar o planejamento do transporte público em cidades de diferentes regiões, com atenção a quem depende do ônibus para chegar a escolas, hospitais, empregos e outras redes de transporte.",
+      "acoes": [
+        "Mapear pontos com espera longa, superlotação e conexões difíceis.",
+        "Reorganizar linhas e horários de acordo com a demanda, aproveitando a estrutura existente.",
+        "Ajustar os trajetos para melhorar as conexões com metrôs e trens onde houver integração."
+      ],
+      "investimento": "R$ 4 bilhões",
+      "alcance": "Projetos-piloto e melhorias em cidades de diferentes regiões ao longo de quatro anos.",
+      "viabilidade": "A proposta aproveita os serviços de transporte já existentes. A execução exige estudos de demanda, adaptação local e colaboração entre prefeituras, estados e União."
+    },
+    {
+      "id": "recicla-mais",
+      "numero": "03",
+      "categoria": "COLETA SELETIVA",
+      "titulo": "Recicla Mais",
+      "curto": "Ampliar a coleta seletiva com ecopontos, rotas de recicláveis e parcerias com cooperativas de catadores.",
+      "icone": "recycle",
+      "descricao": "Apoiar municípios na ampliação da coleta seletiva e garantir que os materiais separados pela população sejam recolhidos e encaminhados corretamente. Cooperativas e associações de catadores teriam papel central.",
+      "acoes": [
+        "Implantar ecopontos e planejar rotas específicas para recicláveis.",
+        "Trabalhar com cooperativas e associações de catadores para organizar o encaminhamento dos materiais.",
+        "Orientar moradores sobre separação de resíduos em campanhas nas escolas e nos bairros."
+      ],
+      "investimento": "R$ 2 bilhões",
+      "alcance": "Implantação e ampliação gradual em municípios selecionados durante quatro anos.",
+      "viabilidade": "Os métodos de coleta e reciclagem já são conhecidos. As rotas, os pontos de entrega e as parcerias precisam se adaptar à realidade de cada município."
+    },
+    {
+      "id": "compra-local",
+      "numero": "04",
+      "categoria": "AGRICULTURA FAMILIAR",
+      "titulo": "Compra Local,<br>Futuro Sustentável",
+      "curto": "Aumentar a participação da agricultura familiar nas compras para a alimentação escolar e outros serviços públicos.",
+      "icone": "leaf",
+      "descricao": "Fortalecer as compras públicas de alimentos de pequenos produtores, aproveitando programas existentes. A proposta incentiva práticas sustentáveis e ajuda a manter parte dos recursos circulando na própria região.",
+      "acoes": [
+        "Orientar produtores sobre como participar dos programas de compra.",
+        "Organizar a logística das entregas conforme a capacidade de produção e a sazonalidade local.",
+        "Incentivar práticas agrícolas mais sustentáveis."
+      ],
+      "investimento": "R$ 1 bilhão",
+      "alcance": "Recursos adicionais para assistência, logística e participação de produtores em quatro anos. Não corresponde ao custo total da alimentação escolar.",
+      "viabilidade": "A proposta parte de mecanismos existentes, como o Programa Nacional de Alimentação Escolar (PNAE). A ampliação depende de apoio aos produtores e planejamento local das entregas."
+    },
+    {
+      "id": "jovem-conectado",
+      "numero": "05",
+      "categoria": "INCLUSÃO DIGITAL",
+      "titulo": "Jovem Conectado",
+      "curto": "Oferecer cursos gratuitos de informática, tecnologia, programação básica e preparação para o trabalho.",
+      "icone": "computer",
+      "descricao": "Ampliar o acesso dos jovens a conhecimentos úteis no estudo e no trabalho. Os cursos poderiam ocorrer em escolas, bibliotecas e centros comunitários, com acesso a equipamentos para quem não tem computador em casa.",
+      "acoes": [
+        "Equipar os espaços públicos selecionados e formar instrutores.",
+        "Abrir turmas gratuitas em horários acessíveis.",
+        "Buscar parcerias com instituições de ensino e empresas para manter os conteúdos atualizados."
+      ],
+      "investimento": "R$ 1,2 bilhão",
+      "alcance": "Equipamentos, formação de instrutores e oferta de cursos em uma primeira etapa nacional de quatro anos.",
+      "viabilidade": "É possível aproveitar espaços e estruturas de ensino já existentes. A ampliação gradual depende de equipamentos, instrutores e organização das turmas."
+    }
   ],
   principios: [
     { titulo: 'Pessoas em primeiro lugar', texto: 'Priorizar a dignidade, os direitos e o acesso a serviços, especialmente onde a necessidade é maior.', icone: 'people' },
@@ -153,10 +233,80 @@ window.PCN_DATA = {
     }
 ],
   noticias: [
-    { id: 'programa', categoria: 'Propostas', titulo: 'Cinco frentes. Um compromisso com a cidade.', resumo: 'Conheça as prioridades que conectam qualidade de vida e desenvolvimento no programa do PCN.', imagem: 'assets/cidade.jpg', alt: 'Vista de edifícios e áreas verdes em uma cidade', leitura: '3 min', destaque: true, paragrafos: ['O programa municipal do PCN se organiza em cinco frentes: moradia segura, transporte acessível, saneamento, modernização industrial e escolas abertas à comunidade.', 'O que une essas propostas é a preocupação com a vida nos bairros e com o retorno social dos investimentos. Cada programa deve ter financiamento definido, critérios públicos, metas e acompanhamento.', 'As propostas são um ponto de partida para o debate interdisciplinar. Custos e cronogramas dependem de levantamento técnico e do orçamento disponível.'], proposta: 'moradia' },
-    { id: 'escolas', categoria: 'Educação', titulo: 'Quando a escola abre, a comunidade ganha caminhos.', resumo: 'Esporte, cultura e tecnologia podem ampliar o uso de espaços que já fazem parte dos bairros.', imagem: 'assets/educacao.jpg', alt: 'Estudantes em um ambiente de aprendizado', leitura: '2 min', paragrafos: ['O PCN propõe um programa de atividades em escolas de bairros com poucas opções gratuitas. As oficinas devem ser escolhidas com estudantes e moradores.', 'Abrir o prédio exige profissionais, limpeza, segurança, acessibilidade, materiais e manutenção. O programa deve ter estrutura própria para preservar as aulas e evitar sobrecarga da equipe escolar.', 'A expansão precisa considerar a participação e os resultados. Nas escolas estaduais, a execução depende de articulação com o governo estadual.'], proposta: 'educacao' },
-    { id: 'visao', categoria: 'O partido', titulo: 'Além dos rótulos: como o PCN avalia uma proposta.', resumo: 'Ouvir, planejar, executar e avaliar. Uma forma de pensar a política a partir de problemas concretos.', imagem: 'assets/comunidade.jpg', alt: 'Grupo de jovens reunidos ao ar livre', leitura: '2 min', paragrafos: ['O Partido Caminho Novo busca soluções que beneficiem a população e favoreçam o desenvolvimento, sem se limitar à divisão habitual entre esquerda e direita.', 'Para avaliar uma proposta, perguntamos quem será atendido, qual problema será resolvido, quanto custará, como será financiada e quais resultados poderão ser acompanhados.', 'Participação, dignidade, responsabilidade ambiental e transparência são os critérios que orientam esse caminho.'] },
-    { id: 'transporte', categoria: 'Propostas', titulo: 'Transporte acessível também precisa de qualidade.', resumo: 'A proposta de gratuidade por etapas depende de financiamento, frota e metas de atendimento.', imagem: 'assets/cidade.jpg', alt: 'Paisagem urbana com ruas e edifícios', leitura: '2 min', paragrafos: ['A passagem pesa no acesso ao trabalho, ao estudo e aos serviços. Por isso, o PCN defende transporte mais barato e a expansão gradual da gratuidade, com o objetivo de chegar à tarifa zero.', 'Cada etapa deve ter fonte de financiamento definida e capacidade de atendimento. Os subsídios precisam estar vinculados à frequência, à pontualidade, à acessibilidade e à cobertura dos bairros.', 'A proposta inclui publicar os custos do sistema e planejar o reforço da frota quando a procura aumentar.'], proposta: 'transporte' },
-    { id: 'industria', categoria: 'Desenvolvimento', titulo: 'Modernizar a indústria com retorno para a sociedade.', resumo: 'Eficiência, qualificação e contrapartidas verificáveis precisam acompanhar o apoio público.', imagem: 'assets/cidade.jpg', alt: 'Edifícios em uma área urbana', leitura: '2 min', paragrafos: ['O PCN propõe apoiar a modernização industrial com compromissos ambientais e sociais verificáveis. A prioridade é reduzir consumo de energia e água, reaproveitar materiais e diminuir emissões.', 'O benefício deve exigir metas proporcionais, prazos e divulgação dos resultados. A qualificação durante a jornada e a negociação sobre mudanças nas funções também fazem parte da proposta.', 'O descumprimento deve gerar consequências, como suspensão do benefício ou devolução proporcional de recursos.'], proposta: 'industria' }
+    {
+      "id": "noticia-rede-brasil-alerta",
+      "categoria": "Prevenção",
+      "titulo": "Rede Brasil Alerta: como o aviso de enchente chegaria a quem precisa?",
+      "resumo": "A proposta combina sensores, sirenes e mensagens no celular para alertar moradores com antecedência.",
+      "imagem": "assets/cidade.jpg",
+      "alt": "Vista de edifícios e áreas verdes em uma cidade",
+      "leitura": "1 min",
+      "paragrafos": [
+        "A Rede Brasil Alerta começaria pelas áreas mais vulneráveis. A ideia é combinar dados de sensores, previsão meteorológica e acompanhamento das Defesas Civis para identificar riscos com antecedência.",
+        "Os avisos poderiam chegar por celular, sirenes e outros canais, para alcançar também quem não tem acesso constante à internet. As mensagens ajudariam os moradores a saber como agir.",
+        "A rede complementaria as obras de drenagem e prevenção. O documento do PCN estima R$ 1,5 bilhão para a primeira etapa de quatro anos."
+      ],
+      "proposta": "rede-brasil-alerta"
+    },
+    {
+      "id": "noticia-periferia-conectada",
+      "categoria": "Mobilidade",
+      "titulo": "Periferia Conectada: o que mudaria no trajeto de ônibus?",
+      "resumo": "O projeto começaria mapeando onde a espera é maior, os ônibus lotam e as conexões falham.",
+      "imagem": "assets/cidade.jpg",
+      "alt": "Vista de edifícios e áreas verdes em uma cidade",
+      "leitura": "1 min",
+      "paragrafos": [
+        "Para quem mora longe do centro, um ônibus lotado ou uma conexão perdida pode aumentar muito o tempo de viagem. O projeto propõe localizar esses problemas antes de alterar as linhas.",
+        "A partir dos estudos de demanda, as cidades participantes poderiam rever horários, trajetos e conexões com metrôs e trens onde houver integração. Cada cidade adaptaria o plano à sua rede.",
+        "O documento estima R$ 4 bilhões para projetos-piloto e melhorias ao longo de quatro anos."
+      ],
+      "proposta": "periferia-conectada"
+    },
+    {
+      "id": "noticia-jovem-conectado",
+      "categoria": "Inclusão digital",
+      "titulo": "Jovem Conectado: cursos gratuitos perto de casa",
+      "resumo": "Escolas, bibliotecas e centros comunitários poderiam receber turmas com acesso a computadores.",
+      "imagem": "assets/educacao.jpg",
+      "alt": "Estudantes em um ambiente de aprendizado",
+      "leitura": "1 min",
+      "paragrafos": [
+        "A proposta levaria cursos de informática, programação básica e preparação para o trabalho a espaços públicos já existentes. Os jovens que não têm computador em casa poderiam usar os equipamentos disponíveis nesses locais.",
+        "O projeto prevê formar instrutores, organizar turmas em horários acessíveis e buscar parcerias para manter os conteúdos atualizados. O objetivo é ampliar o acesso ao aprendizado e às oportunidades de estudo e trabalho.",
+        "Os R$ 1,2 bilhão estimados para quatro anos cobririam equipamentos, formação de instrutores e oferta de cursos."
+      ],
+      "proposta": "jovem-conectado"
+    },
+    {
+      "id": "noticia-recicla-mais",
+      "categoria": "Resíduos",
+      "titulo": "Recicla Mais: o que acontece depois da separação do lixo?",
+      "resumo": "A proposta liga a separação em casa à coleta, aos ecopontos e ao trabalho das cooperativas.",
+      "imagem": "assets/comunidade.jpg",
+      "alt": "Grupo de jovens reunidos ao ar livre",
+      "leitura": "1 min",
+      "paragrafos": [
+        "Separar os recicláveis em casa só funciona quando há um destino para o material. O Recicla Mais propõe ecopontos e rotas específicas para recolher o que os moradores separarem.",
+        "Cooperativas e associações de catadores participariam da organização desse fluxo. Campanhas em escolas e bairros explicariam como separar os resíduos e onde entregá-los.",
+        "O documento estima R$ 2 bilhões para ampliar a coleta seletiva em municípios selecionados ao longo de quatro anos."
+      ],
+      "proposta": "recicla-mais"
+    },
+    {
+      "id": "noticia-compra-local",
+      "categoria": "Agricultura familiar",
+      "titulo": "Compra Local: como a agricultura familiar pode abastecer a alimentação escolar",
+      "resumo": "O programa propõe melhorar as entregas e facilitar a participação dos pequenos produtores nas compras públicas.",
+      "imagem": "assets/educacao.jpg",
+      "alt": "Estudantes em um ambiente de aprendizado",
+      "leitura": "1 min",
+      "paragrafos": [
+        "O PCN propõe aproveitar programas já existentes para ampliar as compras de alimentos da agricultura familiar. A ideia é orientar os produtores e organizar as entregas respeitando o que cada região consegue produzir em cada época do ano.",
+        "As compras atenderiam a alimentação escolar e outros serviços públicos. Além de incentivar práticas sustentáveis, elas ajudariam a manter parte dos recursos circulando na própria região.",
+        "A estimativa de R$ 1 bilhão em quatro anos se refere a apoio adicional à assistência e à logística. O valor não representa o custo total da alimentação escolar."
+      ],
+      "proposta": "compra-local"
+    }
   ]
 };

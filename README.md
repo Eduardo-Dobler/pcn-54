@@ -60,7 +60,7 @@ O formulário valida os campos e prepara uma mensagem que pode ser revisada, cop
 
 ## Editar conteúdo
 
-- As cinco propostas foram adaptadas do Word fornecido. Cada proposta inclui ações, financiamento e acompanhamento.
+- As cinco propostas nacionais foram adaptadas do arquivo Propostas_Nacionais_PCN.docx, disponível para download em `assets/propostas-pcn.docx`. Cada proposta inclui ações, investimento estimado, prazo, alcance e viabilidade técnica. Os valores são estimativas do projeto escolar.
 - A aba “Sobre” desenvolve a orientação informada: ir além da divisão esquerda/direita e unir bem-estar da população e desenvolvimento. Os princípios são uma redação inicial para revisão da equipe.
 - As publicações são textos demonstrativos sobre o programa. Nenhuma delas anuncia conquistas, eventos ou resultados reais.
 - Para criar novas notícias, adicione objetos na lista `noticias`; as categorias e a busca se atualizam automaticamente.
