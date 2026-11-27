@@ -1,7 +1,7 @@
 /* Gerado por scripts/build-offline.py. Não editar sw.js manualmente. */
 const CACHE_PREFIX = 'pcn54-app-';
 const LEGACY_CACHE_PREFIX = 'pnc54-app-'; // Migração do app já instalado.
-const CACHE_NAME = CACHE_PREFIX + '7d2c8ea7d7c01a99';
+const CACHE_NAME = CACHE_PREFIX + '66d2cd63cc2bb66d';
 const FILES = [
   "index.html",
   "styles.css",

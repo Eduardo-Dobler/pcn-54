@@ -8,7 +8,7 @@ Site em HTML, CSS e JavaScript puro para um projeto interdisciplinar do SENAC.
 2. Abra `index.html` em um navegador atualizado.
 3. Mantenha `styles.css`, `data.js`, `app.js` e a pasta `assets` junto do HTML.
 
-Não precisa instalar Node.js nem iniciar um servidor. Imagens, fonte e propostas em Word estão incluídas. Os links externos de créditos e de contato dependem de internet.
+Não precisa instalar Node.js nem iniciar um servidor. Imagens, fonte e propostas em Word estão incluídas. Os links externos de pesquisa, créditos e contato dependem de internet.
 
 ## Arquivos
 
@@ -20,11 +20,11 @@ Não precisa instalar Node.js nem iniciar um servidor. Imagens, fonte e proposta
 | `app.js` | Navegação, carrossel, modais, busca e preparação de mensagens |
 | `assets/` | Logo, fotos, fonte, ícone e Word original |
 
-Todos os arquivos do site ficam na raiz deste repositório. A pasta `assets/` contém as imagens, fontes e o documento original das propostas.
+Todos os arquivos do site ficam na raiz deste repositório. A pasta `assets/` contém as imagens, fontes e a edição ampliada do programa nacional.
 
 ## Candidato, integrantes e imagens
 
-A primeira foto enviada está em `assets/people/candidato.webp` e aparece na abertura do carrossel e no destaque da aba Integrantes. Edite `candidato` em `data.js` para acrescentar o nome e a apresentação pessoal.
+A primeira foto enviada está em `assets/people/candidato.webp` e aparece na abertura do carrossel e no destaque da aba Integrantes. A apresentação de Theresa Venzon fica em `candidato`, no arquivo `data.js`.
 
 Os oito retratos da equipe seguem a ordem informada: Theresa Venzon (Presidente), Eduardo Dobler (Vice-Presidente), Ana Laura (Coordenadora de Campanha), Matheus Vanin (Especialista Técnico), Vinicius Petry (Assessor), Cristiano Luca (Pesquisador), Mateus Sjlender (Financiador) e Yasmin Guidini (Comunicadora).
 
@@ -60,11 +60,11 @@ O formulário valida os campos e prepara uma mensagem que pode ser revisada, cop
 
 ## Editar conteúdo
 
-- As cinco propostas nacionais foram adaptadas do arquivo Propostas_Nacionais_PCN.docx, disponível para download em `assets/propostas-pcn.docx`. Cada proposta inclui ações, investimento estimado, prazo, alcance e viabilidade técnica. Os valores são estimativas do projeto escolar.
+- As cinco propostas nacionais foram adaptadas do arquivo Propostas_Nacionais_PCN.docx, disponível para download em `assets/propostas-pcn.docx`. A edição para download preserva os nomes, o alcance e os valores do Word da equipe e acrescenta o diagnóstico, precedentes, resultados observados, condições, indicadores e referências. Os investimentos são estimativas escolares para quatro anos, sem validação orçamentária.
 - A aba “Sobre” desenvolve a orientação informada: ir além da divisão esquerda/direita e unir bem-estar da população e desenvolvimento. Os princípios são uma redação inicial para revisão da equipe.
-- As publicações são textos demonstrativos sobre o programa. Nenhuma delas anuncia conquistas, eventos ou resultados reais.
-- Para criar novas notícias, adicione objetos na lista `noticias`; as categorias e a busca se atualizam automaticamente.
-- Títulos de destaques e propostas aceitam apenas `<br>` e `<em>` para formatação. Os demais textos devem ser texto simples.
+- As cinco matérias relacionam dados documentados a medidas ainda propostas no projeto. Cada parágrafo com dados cita a fonte que o sustenta.
+- Cadastre links em `fontes` de `data.js`. Nas fichas, referencie os IDs em `evidencias` e no `destaque`; nas notícias, use parágrafos no formato `{texto, fontes: [id]}` (lista vazia para trechos do próprio projeto). A busca e as categorias se atualizam automaticamente. Mantenha o Word sincronizado ao alterar as evidências.
+- Títulos e legendas dos destaques aceitam apenas `<br>` e `<em>` para formatação. Os demais textos devem ser texto simples.
 - A paleta está nas variáveis do início de `styles.css`.
 
 ## Navegação
@@ -76,7 +76,7 @@ O carrossel possui controles, indicadores, pausa, teclado e gesto horizontal. A 
 ## Fontes e créditos
 
 - Logo: emblema de cavalo dourado, roxo e branco fornecido pelo usuário, em `assets/logo-pcn-cavalo.png`. O ícone da aba em `assets/favicon-cavalo.png` é derivado dessa imagem.
-- Propostas: documento Word fornecido pelo usuário.
+- Programa: Word fornecido pelo usuário, ampliado com fontes públicas e estudos citados no próprio site e no documento.
 - Retratos do candidato, integrantes e foto coletiva: 12 imagens fornecidas pela equipe do projeto.
 - Fotografias de ambientação: Unsplash, arquivos disponíveis em `assets`.
 - Fonte Manrope: Google Fonts. Licença SIL Open Font License incluída em `assets/OFL-Manrope.txt`.

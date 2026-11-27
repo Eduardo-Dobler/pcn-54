@@ -109,3 +109,27 @@
 /* Controle central do carrossel */
 #carousel-pause{position:absolute;z-index:5;left:50%;bottom:78px;transform:translateX(-50%);width:44px;height:44px;background:rgba(35,24,51,.9);border-color:rgba(255,211,63,.55);color:var(--gold)}
 @media(max-width:540px){#carousel-pause{position:relative;left:auto;bottom:auto;transform:none;margin:8px auto 12px}}
+
+/* Fichas de pesquisa: manter legibilidade tanto no programa quanto na janela do início. */
+.proposal-card .card-fact{border-top:1px solid var(--line);margin:0 0 1.15rem;padding:1rem 0 0}
+.proposal-card .card-fact>strong{display:block;color:var(--gold);font-size:clamp(1.35rem,2.3vw,1.8rem);letter-spacing:-.03em;line-height:1.15}
+.proposal-card .card-fact p{margin:.4rem 0 0;font-size:.95rem;line-height:1.55;color:#e0d5ea}
+.evidence-sources{display:flex;align-items:baseline;gap:.2rem .45rem;flex-wrap:wrap;margin:.5rem 0 .1rem;font-size:.875rem;line-height:1.6;color:#c9b9d8}
+.evidence-sources a{color:#ffe589;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;overflow-wrap:anywhere}
+.evidence-sources a:hover,.evidence-sources a:focus-visible{color:white;text-decoration-thickness:2px}
+.research-body{max-width:90ch}
+.research-body .program-intro{color:#eee5f5;font-weight:500}
+.research-body h4{margin:1.35rem 0 .45rem;font-size:1.08rem;letter-spacing:-.015em;color:#f5edf9}
+.research-body p,.detail-dialog .research-body p,.research-body li,.detail-dialog .article-paragraph p{font-size:1rem;line-height:1.7;color:#ddd0e7}
+.research-body p,.detail-dialog .research-body p,.detail-dialog .article-paragraph p{margin:0}
+.research-body ul{margin:.35rem 0 .75rem;padding-left:1.25rem}
+.research-body .evidence-block{padding-top:.12rem}
+.research-body .feasibility-note{margin:1rem 0 .3rem;padding-left:.8rem;border-left:2px solid #b791d3}
+.research-body .evaluation-block{border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.2rem .7rem;margin:1.4rem 0;background:rgba(142,98,188,.08)}
+.research-body .evaluation-block h4:first-child,.research-body .cost-note h4{margin-top:0}
+.research-body .cost-note{padding:.25rem 0 1rem}
+.research-body .cost-note strong{color:var(--gold)}
+.detail-dialog .article-paragraph{margin:0 0 1.15rem}
+#programa .demo-note p,#page-noticias .demo-note p{font-size:.94rem;line-height:1.65}
+.proposal-card .card-link,.news-card .card-link{font-size:.9rem}
+@media(max-width:600px){.research-body .evaluation-block{padding:.9rem}.research-body{overflow-wrap:break-word}}

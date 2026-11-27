@@ -5,9 +5,8 @@
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
   const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  // Os títulos do arquivo de conteúdo aceitam apenas <br> e <em>.
+  // Somente os destaques usam marcação de texto limitada.
   const titleHTML = value => escapeHTML(value).replace(/&lt;br\s*\/?&gt;/gi, '<br>').replace(/&lt;(\/?)em&gt;/gi, '<$1em>');
-  const textTitle = value => String(value).replace(/<br\s*\/?\s*>/gi, ' ').replace(/<\/?em>/gi, '');
   const normalized = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const safeAsset = value => /^assets\/[a-zA-Z0-9_./-]+$/.test(value) && !value.includes('..') ? value : 'assets/logo-pcn-cavalo.png';
   const safePercent = value => /^\d+(\.\d+)?%$/.test(value) ? value : '50%';
@@ -41,26 +40,43 @@
     </div></article>`).join('');
   $('#slide-dots').innerHTML = data.slides.map((_, i) => `<button class="slide-dot" type="button" data-slide="${i}" aria-label="Ir para o destaque ${i + 1}" aria-pressed="${i === 0}"></button>`).join('');
 
-  // Propostas e programa aprofundado usam a mesma fonte de conteúdo.
-  $('#proposal-grid').innerHTML = data.propostas.map(p => `<article class="proposal-card glass"><div class="proposal-top">${iconBox(p.icone)}<span class="proposal-number">${escapeHTML(p.numero)}</span></div><h3>${titleHTML(p.titulo)}</h3><p>${escapeHTML(p.curto)}</p><button class="card-link" type="button" data-proposal="${escapeHTML(p.id)}">Explore a proposta<span class="sr-only">: ${escapeHTML(p.categoria.toLowerCase())}</span></button></article>`).join('');
-  const proposalBody = p => `<div class="program-body"><p>${escapeHTML(p.descricao)}</p><h4>Como colocar em prática</h4><ul>${p.acoes.map(a => `<li>${escapeHTML(a)}</li>`).join('')}</ul><div class="program-details"><div><h4>Investimento estimado</h4><p><strong>${escapeHTML(p.investimento)}</strong><br>${escapeHTML(p.alcance)}</p></div><div><h4>Viabilidade técnica</h4><p>${escapeHTML(p.viabilidade)}</p></div></div></div>`;
-  $('#program-list').innerHTML = data.propostas.map(p => `<details class="program-item glass" id="program-${escapeHTML(p.id)}"><summary><span class="program-no">${escapeHTML(p.numero)}</span>${iconBox(p.icone)}<h3>${escapeHTML(textTitle(p.titulo))}</h3><span class="program-toggle" aria-hidden="true">+</span></summary>${proposalBody(p)}</details>`).join('');
+  // Os mesmos dados alimentam as fichas, os cartões e as matérias.
+  function sourceLinks(ids = []) {
+    const sources = ids.map(id => data.fontes[id]).filter(f => f && /^https:\/\//.test(f.url));
+    if (!sources.length) return '';
+    return `<div class="evidence-sources"><span>${sources.length === 1 ? 'Fonte:' : 'Fontes:'}</span> ${sources.map(f => `<a href="${escapeHTML(f.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHTML(f.titulo)}">${escapeHTML(f.rotulo)}<span class="sr-only"> (abre em outra aba)</span></a>`).join(' <span aria-hidden="true">·</span> ')}</div>`;
+  }
+  const listHTML = items => `<ul>${items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`;
+  const quoteFact = d => `<div class="card-fact"><strong>${escapeHTML(d.valor)}</strong><p>${escapeHTML(d.texto)}</p>${sourceLinks([d.fonte])}</div>`;
+  $('#proposal-grid').innerHTML = data.propostas.map(p => `<article class="proposal-card glass"><div class="proposal-top">${iconBox(p.icone)}<span class="proposal-number">${escapeHTML(p.numero)}</span></div><h3>${escapeHTML(p.titulo)}</h3><p>${escapeHTML(p.curto)}</p>${quoteFact(p.destaque)}<button class="card-link" type="button" data-proposal="${escapeHTML(p.id)}">Ver proposta e dados<span class="sr-only">: ${escapeHTML(p.titulo)}</span></button></article>`).join('');
+  const evidenceBlock = (label, e) => `<section class="evidence-block"><h4>${label}</h4><p>${escapeHTML(e.texto)}</p>${sourceLinks(e.fontes)}</section>`;
+  function proposalBody(p) {
+    return `<div class="program-body research-body"><p class="program-intro">${escapeHTML(p.descricao)}</p>
+      ${evidenceBlock('Qual é o problema?', p.evidencias.problema)}
+      <section><h4>O que o PCN propõe</h4>${listHTML(p.acoes)}</section>
+      ${evidenceBlock('Como sabemos que é viável?', p.evidencias.precedente)}
+      <p class="feasibility-note"><strong>Condições para executar.</strong> ${escapeHTML(p.viabilidade)}</p>
+      ${evidenceBlock('O que já foi observado?', p.evidencias.resultado)}
+      <section class="evaluation-block"><h4>Resultado esperado pelo PCN</h4><p>${escapeHTML(p.expectativa)}</p><h4>Como medir</h4>${listHTML(p.indicadores)}</section>
+      <div class="cost-note"><h4>Investimento estimado pelo projeto escolar</h4><p><strong>${escapeHTML(p.investimento)}</strong> · ${escapeHTML(p.alcance)}</p></div></div>`;
+  }
+  $('#program-list').innerHTML = data.propostas.map(p => `<details class="program-item glass" id="program-${escapeHTML(p.id)}"><summary><span class="program-no">${escapeHTML(p.numero)}</span>${iconBox(p.icone)}<h3>${escapeHTML(p.titulo)}</h3><span class="program-toggle" aria-hidden="true">+</span></summary>${proposalBody(p)}</details>`).join('');
   $('#principle-grid').innerHTML = data.principios.map(p => `<article class="principle-card glass">${iconBox(p.icone)}<h3>${escapeHTML(p.titulo)}</h3><p>${escapeHTML(p.texto)}</p></article>`).join('');
 
   const avatar = (p, label, full = false) => `<div class="member-avatar"><img src="${safeAsset(full ? p.avatar : p.miniatura || p.avatar)}" alt="${escapeHTML(label)}" width="480" height="680" loading="lazy" style="object-position:${safePercent(p.x)} ${safePercent(p.y)}"></div>`;
   const candidate = data.candidato;
-  $('#candidato').innerHTML = `${avatar(candidate, 'Retrato do candidato do PCN', true)}<div class="candidate-copy"><p class="eyebrow">CANDIDATURA · PCN 54</p><h2 id="candidate-title">${escapeHTML(candidate.nome)}</h2><p class="candidate-lead">Pessoas em primeiro lugar.<br>Desenvolvimento com propósito.</p><p>${escapeHTML(candidate.bio)}</p><a class="button button-gold" href="#sobre/programa">Conheça as propostas <span aria-hidden="true">↗</span></a></div><span class="candidate-number" aria-hidden="true">54</span>`;
+  $('#candidato').innerHTML = `${avatar(candidate, `Retrato de ${candidate.nome}, candidata do PCN`, true)}<div class="candidate-copy"><p class="eyebrow">CANDIDATURA · PCN 54</p><h2 id="candidate-title">${escapeHTML(candidate.nome)}</h2><p class="candidate-lead">Cinco propostas nacionais.<br>Como acompanhar cada compromisso.</p><p>${escapeHTML(candidate.bio)}</p><a class="button button-gold" href="#sobre/programa">Conheça as propostas <span aria-hidden="true">↗</span></a></div><span class="candidate-number" aria-hidden="true">54</span>`;
   $('#member-grid').innerHTML = data.integrantes.map((p, i) => `<article class="member-card glass"><span aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${avatar(p, `Retrato de ${p.nome}`)}<div class="member-copy"><p class="member-area">${escapeHTML(p.area)}</p><h2>${escapeHTML(p.nome)}</h2><p>${escapeHTML(p.cargo)}</p><p class="member-statement">${escapeHTML(p.resumo)}</p><button type="button" data-member="${i}" aria-label="Conhecer o perfil de ${escapeHTML(p.nome)}">Conhecer integrante <span aria-hidden="true">↗</span></button></div></article>`).join('');
 
   // Publicações e busca por categoria, título, resumo e conteúdo.
-  const newsCard = item => `<article class="news-card"><div class="news-image"><img loading="lazy" src="${safeAsset(item.imagem)}" alt="${escapeHTML(item.alt)}" width="600" height="400"><span class="news-tag">${escapeHTML(item.categoria)}</span></div><div class="news-content"><div class="news-meta"><span>PUBLICAÇÃO DEMONSTRATIVA</span><span>${escapeHTML(item.leitura)} de leitura</span></div><h3>${escapeHTML(item.titulo)}</h3><p>${escapeHTML(item.resumo)}</p><button class="card-link" type="button" data-article="${escapeHTML(item.id)}">Ler publicação<span class="sr-only">: ${escapeHTML(item.titulo)}</span></button></div></article>`;
+  const newsCard = item => `<article class="news-card"><div class="news-image"><img loading="lazy" src="${safeAsset(item.imagem)}" alt="${escapeHTML(item.alt)}" width="600" height="400"><span class="news-tag">${escapeHTML(item.categoria)}</span></div><div class="news-content"><div class="news-meta"><span>CADERNO DE PROPOSTAS</span><span>${escapeHTML(item.leitura)} de leitura</span></div><h3>${escapeHTML(item.titulo)}</h3><p>${escapeHTML(item.resumo)}</p><button class="card-link" type="button" data-article="${escapeHTML(item.id)}">Ler publicação<span class="sr-only">: ${escapeHTML(item.titulo)}</span></button></div></article>`;
   $('#home-news').innerHTML = data.noticias.slice(0, 3).map(newsCard).join('');
   const categories = ['Todas', ...new Set(data.noticias.map(n => n.categoria))];
   let activeCategory = 'Todas';
   $('#news-filters').innerHTML = categories.map(c => `<button type="button" class="filter-button" data-category="${escapeHTML(c)}" aria-pressed="${c === activeCategory}">${escapeHTML(c)}</button>`).join('');
   function filterNews() {
     const term = normalized($('#news-search').value.trim());
-    const results = data.noticias.filter(n => (activeCategory === 'Todas' || n.categoria === activeCategory) && normalized([n.titulo, n.resumo, n.categoria, ...n.paragrafos].join(' ')).includes(term));
+    const results = data.noticias.filter(n => (activeCategory === 'Todas' || n.categoria === activeCategory) && normalized([n.titulo, n.resumo, n.categoria, ...n.paragrafos.map(p => p.texto)].join(' ')).includes(term));
     $('#news-results').innerHTML = results.map(newsCard).join('');
     $('#news-empty').hidden = results.length !== 0;
     $$('.filter-button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.category === activeCategory)));
@@ -204,11 +220,11 @@
     const articleButton = e.target.closest('[data-article]');
     if (articleButton) {
       const n = data.noticias.find(x => x.id === articleButton.dataset.article);
-      if (n) openDialog(`<p class="eyebrow">${escapeHTML(n.categoria)} · PUBLICAÇÃO DEMONSTRATIVA</p><h2>${escapeHTML(n.titulo)}</h2><img class="article-image" src="${safeAsset(n.imagem)}" alt="${escapeHTML(n.alt)}">${n.paragrafos.map(p => `<p>${escapeHTML(p)}</p>`).join('')}${n.proposta ? `<a class="button button-gold" href="#sobre/${escapeHTML(n.proposta)}">Conhecer a proposta ↗</a>` : '<a class="button button-gold" href="#sobre">Conhecer o PCN ↗</a>'}`, articleButton);
+      if (n) openDialog(`<p class="eyebrow">${escapeHTML(n.categoria)} · CADERNO DE PROPOSTAS</p><h2>${escapeHTML(n.titulo)}</h2><img class="article-image" src="${safeAsset(n.imagem)}" alt="${escapeHTML(n.alt)}">${n.paragrafos.map(p => `<div class="article-paragraph"><p>${escapeHTML(p.texto)}</p>${sourceLinks(p.fontes)}</div>`).join('')}${n.proposta ? `<a class="button button-gold" href="#sobre/${escapeHTML(n.proposta)}">Conhecer a proposta ↗</a>` : '<a class="button button-gold" href="#sobre">Conhecer o PCN ↗</a>'}`, articleButton);
     }
     if (e.target.closest('#detail-dialog a[href^="#"]')) closeDialog();
   });
-  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. As publicações demonstrativas apresentam as propostas do projeto.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Retratos do candidato, integrantes e fotografia da equipe: imagens fornecidas para o projeto.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PCN.</li></ul>', e.currentTarget));
+  $('#credits-button').addEventListener('click', e => openDialog('<p class="eyebrow">SOBRE ESTE PROJETO</p><h2>Feito para pensar<br>um novo caminho.</h2><p>Site de um partido fictício, criado para o projeto interdisciplinar do SENAC. Propostas baseadas no documento fornecido pela equipe. As matérias explicam o programa com dados identificados por fonte. Os resultados de experiências reais não são realizações do PCN.</p><ul class="credit-list"><li>Identidade visual: logo fornecida pelo projeto.</li><li>Retratos do candidato, integrantes e fotografia da equipe: imagens fornecidas para o projeto.</li><li>Fotografias de ambientação: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</li><li>Tipografia: Manrope, distribuída pelo Google Fonts.</li><li>Referência de organização: <a href="https://missao.org.br/" target="_blank" rel="noopener noreferrer">site Missão</a>. Conteúdo e identidade próprios do PCN.</li></ul>', e.currentTarget));
 
   // As abas possuem URLs próprias por hash e funcionam sem servidor.
   const pageTitles = { inicio: 'Início', integrantes: 'Integrantes', sobre: 'Sobre o partido', noticias: 'Notícias', contatos: 'Contatos' };
